@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: DA Book
+title: CHF Pub
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -10,12 +10,23 @@ authors:
     email: jonatan.steller@adwmainz.de
     affiliation: Academy of Sciences and Literature Mainz
     orcid: 'https://orcid.org/0000-0002-5101-5275'
+  - name: "CHF Pub contributors"
 repository-code: >-
-  https://gitlab.rlp.net/adwmainz/digicademy/t3xdev/da-book
+  https://github.com/digicademy-chf/chf_pub
 abstract: >-
-  Longer description.
+  The extension provides a data model for data of
+  stereotypical publications, such as printed volumes and
+  academic blogs, as part of the Cultural Heritage
+  Framework (CHF). The central resource equals either a
+  book series or a blog. It may contain multiple volumes
+  which, in turn, contain sections and/or essays. These
+  could be new publications or retrodigitised ones. To
+  model a blog instead, essays may be added directly to
+  the resource. Other records may be connected to volumes
+  through a dedicated volume relation.
 keywords:
   - TYPO3
+  - Blog
   - Book
   - Volume
   - Print
@@ -24,5 +35,5 @@ keywords:
   - Academia
   - Academic
 license: GPL 3
-version: 0.0.1
-date-released: '2023-04-12'
+version: 0.6.0
+date-released: '2023-11-27'

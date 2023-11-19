@@ -1,24 +1,28 @@
 {
-    "name": "digicademy/da-book",
+    "name": "digicademy/chf_pub",
     "type": "typo3-cms-extension",
-    "description": "Create and manage book-like data in TYPO3",
+    "description": "Create and manage blog and book data in TYPO3",
     "authors": [
         {
             "name": "Jonatan Jalle Steller",
             "email": "jonatan.steller@adwmainz.de",
             "role": "Developer",
             "homepage": "https://www.adwmainz.de"
+        },
+        {
+            "name": "CHF Pub contributors"
         }
     ],
     "license": "GPL-2.0-or-later",
-    "homepage": "https://gitlab.rlp.net/adwmainz/digicademy/t3xdev/da-book",
+    "homepage": "https://extensions.typo3.org/extension/chf_pub",
     "support": {
-        "issues": "https://gitlab.rlp.net/adwmainz/digicademy/t3xdev/da-book/-/issues",
-        "source": "https://gitlab.rlp.net/adwmainz/digicademy/t3xdev/da-book",
-        "docs": "https://adwmainz.pages.gitlab.rlp.net/digicademy/t3xdev/da-book"
+        "issues": "https://github.com/digicademy-chf/chf_pub/issues",
+        "source": "https://github.com/digicademy-chf/chf_pub",
+        "docs": "https://digicademy-chf.github.io/chf_pub"
     },
     "keywords": [
         "TYPO3",
+        "Blog",
         "Book",
         "Volume",
         "Print",
@@ -32,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Digicademy\\DABook\\": "Classes/"
+            "Digicademy\\CHFPub\\": "Classes/"
         }
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "da_book"
+            "extension-key": "chf_pub"
         }
     }
 }

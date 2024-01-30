@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:chf_pub/Resources/Private/Language/locallang.xlf" date="2023-09-25T10:48:43Z" product-name="chf_pub">
+        <header/>
+        <body>
+            <!-- Object: PublicationResource -->
+            <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource" approved="yes">
+                <source>Publication</source>
+                <target>Publikation</target>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allVolumes" resname="object.publicationResource.allVolumes" approved="yes">
+                <source>All volumes</source>
+                <target>Alle Bände</target>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allVolumes.description" resname="object.publicationResource.allVolumes.description" approved="yes">
+                <source>List of all volumes compiled in this resource</source>
+                <target>Liste aller Bände, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allEssays" resname="object.publicationResource.allEssays" approved="yes">
+                <source>All essays</source>
+                <target>Alle Aufsätze</target>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allEssays.description" resname="object.publicationResource.allEssays.description" approved="yes">
+                <source>List of all essays compiled in this resource</source>
+                <target>Liste aller Aufsätze, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

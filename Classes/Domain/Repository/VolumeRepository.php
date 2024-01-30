@@ -1,5 +1,5 @@
 <?php
-
+defined('TYPO3') or die();
 declare(strict_types=1);
 
 # This file is part of the extension CHF Pub for TYPO3.
@@ -29,5 +29,3 @@ class VolumeRepository extends Repository
         'meetingTitle'     => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

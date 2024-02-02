@@ -24,6 +24,27 @@
                 <source>List of all essays compiled in this resource</source>
                 <target>Liste aller Aufsätze, die in dieser Ressource verzeichnet sind</target>
             </trans-unit>
+            <!-- Object: VolumeRelation -->
+            <trans-unit id="object.volumeRelation.type.volumeRelation" resname="object.volumeRelation.type.volumeRelation" approved="yes">
+                <source>Volume relation</source>
+                <target>Bandrelation</target>
+            </trans-unit>
+            <trans-unit id="object.volumeRelation.volume" resname="object.volumeRelation.volume" approved="yes">
+                <source>Volume</source>
+                <target>Band</target>
+            </trans-unit>
+            <trans-unit id="object.volumeRelation.volume.description" resname="object.volumeRelation.volume.description" approved="yes">
+                <source>Volume to relate to the record</source>
+                <target>Band, der mit dem Eintrag verknüpft werden soll</target>
+            </trans-unit>
+            <trans-unit id="object.volumeRelation.volumePosition" resname="object.volumeRelation.volumePosition" approved="yes">
+                <source>Volume position</source>
+                <target>Stelle im Band</target>
+            </trans-unit>
+            <trans-unit id="object.volumeRelation.volumePosition.description" resname="object.volumeRelation.volumePosition.description" approved="yes">
+                <source>Page number or other location in the volume to relate to</source>
+                <target>Seitenangabe oder andere Stelle im Band, auf den verwieden wird</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

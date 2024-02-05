@@ -13,10 +13,10 @@ images and may represent either a book section, a book chapter, or a blog
 entry.
 
 Records from other data models may use a ``VolumeRelation`` to indicate a
-specific page of a retrodigitised ``Volume``. ``Agents`` can be indicated as
-authors or in other roles via an ``AuthorshipRelation``.
+specific page of a retrodigitised ``Volume``. ``Agent`` objects can be
+indicated as authors or in other roles via an ``AuthorshipRelation``.
 
-In addition, the model knows flexible ``LabelTag``s and ``SameAs`` classes,
+In addition, the model knows flexible ``LabelTag`` and ``SameAs`` classes,
 which can be used to group essays and volumes via labels and to connect
 entities to authority files.
 
@@ -27,7 +27,7 @@ Graphical overview
 
 ..  figure:: /DataModel/DataModel.png
     :alt: Data model of the extension
-    :target: /DataModel/DataModel.png
+    :target: ../_images/DataModel.png
     :class: with-shadow
 
     Overview of the extension's data model. Check the :ref:`api-reference`

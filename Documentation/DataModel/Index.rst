@@ -12,7 +12,7 @@ All records of a traditional publication are held together by a single
 images and may represent either a book section, a book chapter, or a blog
 entry.
 
-Records from other data models may use a ``VolumeRelation`` to indicate a
+Records from other data models may use a ``PublicationRelation`` to indicate a
 specific page of a retrodigitised ``Volume``. ``Agent`` objects can be
 indicated as authors or in other roles via an ``AuthorshipRelation``.
 

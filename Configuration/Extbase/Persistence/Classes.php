@@ -27,7 +27,7 @@ return [
     ],
     Digicademy\CHFBase\Domain\Model\AbstractRelation::class => [
         'subclasses' => [
-            'volumeRelation' => Digicademy\CHFPub\Domain\Model\VolumeRelation::class,
+            'publicationRelation' => Digicademy\CHFPub\Domain\Model\PublicationRelation::class,
         ],
     ],
 ];

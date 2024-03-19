@@ -10,7 +10,7 @@ declare(strict_types=1);
 defined('TYPO3') or die();
 
 /**
- * VolumeRelation and its properties
+ * PublicationRelation and its properties
  * 
  * Extension of a database table and its editing interface in the
  * TYPO3 backend. This also serves as the basis for the Extbase
@@ -24,30 +24,30 @@ defined('TYPO3') or die();
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.chfPub'
 );
 
-// Add select item 'volumeRelation'
+// Add select item 'publicationRelation'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tx_chfbase_domain_model_relation', 'type',
     [
-        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.volumeRelation.type.volumeRelation',
-        'value' => 'volumeRelation',
+        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.type.publicationRelation',
+        'value' => 'publicationRelation',
         'group' => 'chfPub',
     ]
 );
 
-// Add columns 'volume' and 'volumePosition'
+// Add columns 'volume', 'essay', and 'volumePosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_relation',
     [
         'volume' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.volumeRelation.volume',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.volumeRelation.volume.description',
+            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume',
+            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfpub_domain_model_relation_volume_volume_mm',
-                'MM_opposite_field' => 'asVolumeOfVolumeRelation',
+                'MM_opposite_field' => 'asVolumeOfPublicationRelation',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -61,13 +61,39 @@ defined('TYPO3') or die();
                         'disabled' => false,
                     ],
                 ],
-                'required' => true,
             ],
         ],
-        'volumePosition' => [
+        'essay' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.volumeRelation.volumePosition',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.volumeRelation.volumePosition.description',
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.essay',
+            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.essay.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfpub_domain_model_essay',
+                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
+                'MM' => 'tx_chfpub_domain_model_relation_essay_essay_mm',
+                'MM_opposite_field' => 'asEssayOfPublicationRelation',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => false,
+                    ],
+                ],
+            ],
+        ],
+        'position' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.position',
+            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.position.description',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
@@ -76,22 +102,21 @@ defined('TYPO3') or die();
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'required' => true,
             ],
         ],
     ]
 );
 
-// Create palette 'volumeVolumePosition'
+// Create palette 'volumeEssayPosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tx_chfbase_domain_model_relation',
-    'volumeVolumePosition',
-    'volume,volumePosition,'
+    'volumeEssayPosition',
+    'volume,essay,position,'
 );
 
-// Add type 'volumeRelation' and its 'showitem' list
+// Add type 'publicationRelation' and its 'showitem' list
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
    'tx_chfbase_domain_model_relation',
-   'hiddenParentResource,uuidType,record,volumeVolumePosition,description,',
-   'volumeRelation'
+   'hiddenParentResource,uuidType,record,volumeEssayPosition,description,',
+   'publicationRelation'
 );

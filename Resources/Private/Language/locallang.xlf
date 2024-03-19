@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:chf_pub/Resources/Private/Language/locallang.xlf" date="2023-09-25T10:48:43Z" product-name="chf_pub">
+        <header/>
+        <body>
+            <!-- Object: PublicationResource -->
+            <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allVolumes" resname="object.publicationResource.allVolumes">
+                <source>All volumes</source>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allVolumes.description" resname="object.publicationResource.allVolumes.description">
+                <source>List of all volumes compiled in this resource</source>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allEssays" resname="object.publicationResource.allEssays">
+                <source>All essays</source>
+            </trans-unit>
+            <trans-unit id="object.publicationResource.allEssays.description" resname="object.publicationResource.allEssays.description">
+                <source>List of all essays compiled in this resource</source>
+            </trans-unit>
+            <!-- Object: PublicationRelation -->
+            <trans-unit id="object.publicationRelation.type.publicationRelation" resname="object.publicationRelation.type.publicationRelation">
+                <source>Publication relation</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.volume" resname="object.publicationRelation.volume">
+                <source>Volume</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.volume.description" resname="object.publicationRelation.volume.description">
+                <source>Volume to relate to the record</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.essay" resname="object.publicationRelation.essay">
+                <source>Essay</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.essay.description" resname="object.publicationRelation.essay.description">
+                <source>Essay to relate to the record</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.position" resname="object.publicationRelation.position">
+                <source>Position</source>
+            </trans-unit>
+            <trans-unit id="object.publicationRelation.position.description" resname="object.publicationRelation.position.description">
+                <source>Page number or other location in the volume or essay to relate to</source>
+            </trans-unit>
+            <!-- Object: Volume -->
+            <trans-unit id="object.volume" resname="object.volume">
+                <source>Volume</source>
+            </trans-unit>
+            <trans-unit id="object.volume.title" resname="object.volume.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="object.volume.title.description" resname="object.volume.title.description">
+                <source>Name of this volume</source>
+            </trans-unit>
+            <trans-unit id="object.volume.essay" resname="object.volume.essay">
+                <source>Essay</source>
+            </trans-unit>
+            <trans-unit id="object.volume.essay.description" resname="object.volume.essay.description">
+                <source>List of essays that are part of this volume</source>
+            </trans-unit>
+            <trans-unit id="object.volume.asVolumeOfPublicationRelation" resname="object.volume.asVolumeOfPublicationRelation">
+                <source>Usage as volume of a publication relation</source>
+            </trans-unit>
+            <trans-unit id="object.volume.asVolumeOfPublicationRelation.description" resname="object.volume.asVolumeOfPublicationRelation.description">
+                <source>List of publication relations that use this volume</source>
+            </trans-unit>
+            <!-- Object: Essay -->
+            <trans-unit id="object.essay" resname="object.essay">
+                <source>Essay</source>
+            </trans-unit>
+            <trans-unit id="object.essay.parentVolume" resname="object.essay.parentVolume">
+                <source>Parent volume</source>
+            </trans-unit>
+            <trans-unit id="object.essay.parentVolume.description" resname="object.essay.parentVolume.description">
+                <source>Volume that this essay is part of</source>
+            </trans-unit>
+            <trans-unit id="object.essay.parentEssay" resname="object.essay.parentEssay">
+                <source>Parent essay</source>
+            </trans-unit>
+            <trans-unit id="object.essay.parentEssay.description" resname="object.essay.parentEssay.description">
+                <source>Essay that this essay is part of</source>
+            </trans-unit>
+            <trans-unit id="object.essay.title" resname="object.essay.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="object.essay.title.description" resname="object.essay.title.description">
+                <source>Name of this essay</source>
+            </trans-unit>
+            <trans-unit id="object.essay.essay" resname="object.essay.essay">
+                <source>Essay</source>
+            </trans-unit>
+            <trans-unit id="object.essay.essay.description" resname="object.essay.essay.description">
+                <source>List of essays that are part of this essay</source>
+            </trans-unit>
+            <trans-unit id="object.essay.asEssayOfPublicationRelation" resname="object.essay.asEssayOfPublicationRelation">
+                <source>Usage as essay of a publication relation</source>
+            </trans-unit>
+            <trans-unit id="object.essay.asEssayOfPublicationRelation.description" resname="object.essay.asEssayOfPublicationRelation.description">
+                <source>List of publication relations that use this essay</source>
+            </trans-unit>
+            <!-- Object: Extent -->
+            <trans-unit id="object.extent.type.doi" resname="object.extent.type.doi">
+                <source>DOI</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn">
+                <source>Further URN (includes Handle)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
+                <source>Edition</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume">
+                <source>Volume</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue">
+                <source>Issue</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn">
+                <source>ISSN</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn">
+                <source>ISBN</source>
+            </trans-unit>
+            <!-- Object: LabelTag -->
+            <trans-unit id="object.labelTag.asLabelOfVolume" resname="object.labelTag.asLabelOfVolume">
+                <source>Usage as label of a volume</source>
+            </trans-unit>
+            <trans-unit id="object.labelTag.asLabelOfVolume.description" resname="object.labelTag.asLabelOfVolume.description">
+                <source>List of volumes that use this tag as a label</source>
+            </trans-unit>
+            <trans-unit id="object.labelTag.asLabelOfEssay" resname="object.labelTag.asLabelOfEssay">
+                <source>Usage as label of a essay</source>
+            </trans-unit>
+            <trans-unit id="object.labelTag.asLabelOfEssay.description" resname="object.labelTag.asLabelOfEssay.description">
+                <source>List of essays that use this tag as a label</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

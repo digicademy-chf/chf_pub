@@ -132,6 +132,13 @@
             <trans-unit id="object.labelTag.asLabelOfEssay.description" resname="object.labelTag.asLabelOfEssay.description">
                 <source>List of essays that use this tag as a label</source>
             </trans-unit>
+            <!-- Object: AbstractHeritage -->
+            <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation">
+                <source>Publication relation</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
+                <source>Publication of this database record described by a relation</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

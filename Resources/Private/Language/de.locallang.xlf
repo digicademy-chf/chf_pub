@@ -173,6 +173,15 @@
                 <source>List of essays that use this tag as a label</source>
                 <target>Liste der Aufsätze, die dieses Schlagwort als Label verwenden</target>
             </trans-unit>
+            <!-- Object: AbstractHeritage -->
+            <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation" approved="yes">
+                <source>Publication relation</source>
+                <target>Publikationsrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description" approved="yes">
+                <source>Publication of this database record described by a relation</source>
+                <target>Publikation dieses Datenbankeintrags beschrieben durch eine Relation</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

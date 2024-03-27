@@ -134,6 +134,7 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
+                'required' => true,
             ],
         ],
         'parentVolume' => [
@@ -143,7 +144,7 @@ return [
             'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.essay.parentVolume.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
                 'sortItems' => [

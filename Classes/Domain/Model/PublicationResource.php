@@ -73,7 +73,6 @@ class PublicationResource extends AbstractResource
      */
     public function initializeObject(): void
     {
-        $this->glossary = new LazyLoadingProxy();
         $this->allVolumes ??= new ObjectStorage();
         $this->allEssays ??= new ObjectStorage();
     }

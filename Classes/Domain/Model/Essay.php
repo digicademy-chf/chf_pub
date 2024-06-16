@@ -12,6 +12,7 @@ namespace Digicademy\CHFPub\Domain\Model;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Model\AbstractHeritage;
 use Digicademy\CHFBase\Domain\Model\Extent;
@@ -103,8 +104,6 @@ class Essay extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->parentVolume = new LazyLoadingProxy();
-        $this->parentEssay = new LazyLoadingProxy();
         $this->extent ??= new ObjectStorage();
         $this->essay ??= new ObjectStorage();
         $this->asEssayOfPublicationRelation ??= new ObjectStorage();

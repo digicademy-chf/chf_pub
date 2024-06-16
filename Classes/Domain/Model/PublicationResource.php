@@ -26,10 +26,10 @@ class PublicationResource extends AbstractResource
     /**
      * Resource to use as a glossary for this resource
      * 
-     * @var GlossaryResource|LazyLoadingProxy
+     * @var GlossaryResource|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected GlossaryResource|LazyLoadingProxy $glossary;
+    protected GlossaryResource|LazyLoadingProxy|null $glossary = null;
 
     /**
      * List of all volumes compiled in this resource

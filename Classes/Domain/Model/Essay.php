@@ -27,18 +27,18 @@ class Essay extends AbstractHeritage
     /**
      * Volume that this essay is part of
      * 
-     * @var Volume|LazyLoadingProxy
+     * @var Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Volume|LazyLoadingProxy $parentVolume;
+    protected Volume|LazyLoadingProxy|null $parentVolume = null;
 
     /**
      * Essay that this essay is part of
      * 
-     * @var Essay|LazyLoadingProxy
+     * @var Essay|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Essay|LazyLoadingProxy $parentEssay;
+    protected Essay|LazyLoadingProxy|null $parentEssay = null;
 
     /**
      * Name of this essay

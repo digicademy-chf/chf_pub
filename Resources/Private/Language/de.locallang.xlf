@@ -5,8 +5,8 @@
         <body>
             <!-- Object: PublicationResource -->
             <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource" approved="yes">
-                <source>Publication</source>
-                <target>Publikation</target>
+                <source>Text publication</source>
+                <target>Textpublikation</target>
             </trans-unit>
             <trans-unit id="object.publicationResource.allVolumes" resname="object.publicationResource.allVolumes" approved="yes">
                 <source>All volumes</source>

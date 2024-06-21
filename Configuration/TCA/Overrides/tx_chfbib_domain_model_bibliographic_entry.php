@@ -34,6 +34,10 @@ defined('TYPO3') or die();
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'publicationRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
+                'MM_match_fields' => [
+                    'fieldname' => 'publicationRelation',
+                    'tablename' => 'tx_chfbib_domain_model_bibliographic_entry',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [

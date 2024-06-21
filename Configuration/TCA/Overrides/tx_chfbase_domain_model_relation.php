@@ -46,8 +46,7 @@ defined('TYPO3') or die();
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
-                'MM' => 'tx_chfpub_domain_model_relation_volume_volume_mm',
-                'MM_opposite_field' => 'asVolumeOfPublicationRelation',
+                'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -73,8 +72,7 @@ defined('TYPO3') or die();
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
-                'MM' => 'tx_chfpub_domain_model_relation_essay_essay_mm',
-                'MM_opposite_field' => 'asEssayOfPublicationRelation',
+                'MM' => 'tx_chfbase_domain_model_relation_essay_essay_mm',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -117,6 +115,6 @@ defined('TYPO3') or die();
 // Add type 'publicationRelation' and its 'showitem' list
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
    'tx_chfbase_domain_model_relation',
-   'hiddenParentResource,uuidType,record,volumeEssayPosition,description,',
+   'parentResource,--palette--;;typeUuid,record,--palette--;;volumeEssayPosition,description,',
    'publicationRelation'
 );

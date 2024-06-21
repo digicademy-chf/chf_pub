@@ -70,9 +70,6 @@ class Essay extends AbstractHeritage
      * @var ?ObjectStorage<Essay>
      */
     #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
     protected ?ObjectStorage $essay = null;
 
     /**

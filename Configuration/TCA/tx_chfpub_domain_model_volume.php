@@ -294,7 +294,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'authorshipRelation',
-                    'tablename' => 'tx_chfpub_domain_model_volume',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -326,7 +325,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'licenceRelation',
-                    'tablename' => 'tx_chfpub_domain_model_volume',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -496,7 +494,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'linkRelation',
-                    'tablename' => 'tx_chfpub_domain_model_volume',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -528,7 +525,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'publicationRelation',
-                    'tablename' => 'tx_chfpub_domain_model_volume',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -585,7 +581,6 @@ return [
                 'MM_opposite_field' => 'volume',
                 'MM_match_fields' => [
                     'fieldname' => 'asVolumeOfPublicationRelation',
-                    'tablename' => 'tx_chfpub_domain_model_volume',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,

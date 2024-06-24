@@ -43,22 +43,12 @@ defined('TYPO3') or die();
             'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
-                'size' => 5,
-                'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
+                'sortItems' => [
+                    'label' => 'asc',
                 ],
             ],
         ],
@@ -69,22 +59,12 @@ defined('TYPO3') or die();
             'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.essay.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_essay_essay_mm',
-                'size' => 5,
-                'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
+                'sortItems' => [
+                    'label' => 'asc',
                 ],
             ],
         ],
@@ -109,12 +89,10 @@ defined('TYPO3') or die();
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tx_chfbase_domain_model_relation',
     'volumeEssayPosition',
-    'volume,essay,position,'
+    'volume,essay,--linebreak--,position,'
 );
 
 // Add type 'publicationRelation' and its 'showitem' list
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-   'tx_chfbase_domain_model_relation',
-   'parentResource,--palette--;;typeUuid,record,--palette--;;volumeEssayPosition,description,',
-   'publicationRelation'
-);
+$GLOBALS['TCA']['tx_chfbase_domain_model_relation']['types'] += ['publicationRelation' => [
+    'showitem' => '--palette--;;typeUuid,record,--palette--;;volumeEssayPosition,--palette--;;parentResourceDescription,',
+]];

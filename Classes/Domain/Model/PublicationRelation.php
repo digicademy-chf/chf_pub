@@ -11,6 +11,7 @@ namespace Digicademy\CHFPub\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Model\AbstractRelation;
 
@@ -32,21 +33,21 @@ class PublicationRelation extends AbstractRelation
     /**
      * Volume to relate to the record
      * 
-     * @var ?ObjectStorage<Volume>
+     * @var Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected ?ObjectStorage $volume;
+    protected Volume|LazyLoadingProxy|null $volume = null;
 
     /**
      * Essay to relate to the record
      * 
-     * @var ?ObjectStorage<Essay>
+     * @var Essay|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected ?ObjectStorage $essay;
+    protected Essay|LazyLoadingProxy|null $essay = null;
 
     /**
-     * Page number or other location in the volume or essay to relate to
+     * Page number or other location
      * 
      * @var string
      */
@@ -81,8 +82,6 @@ class PublicationRelation extends AbstractRelation
     public function initializeObject(): void
     {
         $this->record ??= new ObjectStorage();
-        $this->volume ??= new ObjectStorage();
-        $this->essay ??= new ObjectStorage();
     }
 
     /**
@@ -136,100 +135,48 @@ class PublicationRelation extends AbstractRelation
 
     /**
      * Get volume
-     *
-     * @return ObjectStorage<Volume>
+     * 
+     * @return Volume
      */
-    public function getVolume(): ?ObjectStorage
+    public function getVolume(): Volume
     {
+        if ($this->volume instanceof LazyLoadingProxy) {
+            $this->volume->_loadRealInstance();
+        }
         return $this->volume;
     }
 
     /**
      * Set volume
-     *
-     * @param ObjectStorage<Volume> $volume
+     * 
+     * @param Volume
      */
-    public function setVolume(ObjectStorage $volume): void
+    public function setVolume(Volume $volume): void
     {
         $this->volume = $volume;
     }
 
     /**
-     * Add volume
-     *
-     * @param Volume $volume
-     */
-    public function addVolume(Volume $volume): void
-    {
-        $this->volume?->attach($volume);
-    }
-
-    /**
-     * Remove volume
-     *
-     * @param Volume $volume
-     */
-    public function removeVolume(Volume $volume): void
-    {
-        $this->volume?->detach($volume);
-    }
-
-    /**
-     * Remove all volumes
-     */
-    public function removeAllVolume(): void
-    {
-        $volume = clone $this->volume;
-        $this->volume->removeAll($volume);
-    }
-
-    /**
      * Get essay
-     *
-     * @return ObjectStorage<Essay>
+     * 
+     * @return Essay
      */
-    public function getEssay(): ?ObjectStorage
+    public function getEssay(): Essay
     {
+        if ($this->essay instanceof LazyLoadingProxy) {
+            $this->essay->_loadRealInstance();
+        }
         return $this->essay;
     }
 
     /**
      * Set essay
-     *
-     * @param ObjectStorage<Essay> $essay
+     * 
+     * @param Essay
      */
-    public function setEssay(ObjectStorage $essay): void
+    public function setEssay(Essay $essay): void
     {
         $this->essay = $essay;
-    }
-
-    /**
-     * Add essay
-     *
-     * @param Essay $essay
-     */
-    public function addEssay(Essay $essay): void
-    {
-        $this->essay?->attach($essay);
-    }
-
-    /**
-     * Remove essay
-     *
-     * @param Essay $essay
-     */
-    public function removeEssay(Essay $essay): void
-    {
-        $this->essay?->detach($essay);
-    }
-
-    /**
-     * Remove all essays
-     */
-    public function removeAllEssay(): void
-    {
-        $essay = clone $this->essay;
-        $this->essay->removeAll($essay);
     }
 
     /**

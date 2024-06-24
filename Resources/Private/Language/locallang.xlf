@@ -39,7 +39,7 @@
                 <source>Position</source>
             </trans-unit>
             <trans-unit id="object.publicationRelation.position.description" resname="object.publicationRelation.position.description">
-                <source>Page number or other location in the volume or essay to relate to</source>
+                <source>Page number or other location</source>
             </trans-unit>
             <!-- Object: Volume -->
             <trans-unit id="object.volume" resname="object.volume">
@@ -102,7 +102,7 @@
                 <source>DOI</source>
             </trans-unit>
             <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn">
-                <source>Further URN (includes Handle)</source>
+                <source>Further URN (incl. Handle)</source>
             </trans-unit>
             <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
                 <source>Edition</source>
@@ -124,20 +124,20 @@
                 <source>Usage as label of a volume</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfVolume.description" resname="object.labelTag.asLabelOfVolume.description">
-                <source>List of volumes that use this tag as a label</source>
+                <source>List of volumes that use this label</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfEssay" resname="object.labelTag.asLabelOfEssay">
                 <source>Usage as label of a essay</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfEssay.description" resname="object.labelTag.asLabelOfEssay.description">
-                <source>List of essays that use this tag as a label</source>
+                <source>List of essays that use this label</source>
             </trans-unit>
             <!-- Object: AbstractHeritage -->
             <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation">
-                <source>Publication relation</source>
+                <source>Text publication</source>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
-                <source>Publication of this database record described by a relation</source>
+                <source>Text publications of this database record</source>
             </trans-unit>
         </body>
     </file>

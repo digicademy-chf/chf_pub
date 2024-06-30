@@ -33,9 +33,7 @@ defined('TYPO3') or die();
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfpub_domain_model_volume_tag_label_mm',
                 'MM_opposite_field' => 'label',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelOfVolume',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -58,9 +56,7 @@ defined('TYPO3') or die();
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfpub_domain_model_essay_tag_label_mm',
                 'MM_opposite_field' => 'label',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelOfEssay',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],

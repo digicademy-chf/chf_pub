@@ -96,5 +96,6 @@ defined('TYPO3') or die();
 
 // Add type 'publicationRelation' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_relation']['types'] += ['publicationRelation' => [
-    'showitem' => '--palette--;;typeUuid,record,--palette--;;volumeEssayPosition,--palette--;;parentResourceDescription,',
+    'showitem' => 'type,record,--palette--;;volumeEssayPosition,description,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
 ]];

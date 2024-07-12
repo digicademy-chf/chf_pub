@@ -25,10 +25,10 @@ class PublicationRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var ?ObjectStorage<object>
+     * @var object|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected ?ObjectStorage $record;
+    protected object|null $record = null;
 
     /**
      * Volume to relate to the record
@@ -73,64 +73,30 @@ class PublicationRelation extends AbstractRelation
         $this->initializeObject();
 
         $this->setType('publicationRelation');
-        $this->addRecord($record);
-    }
-
-    /**
-     * Initialize object
-     */
-    public function initializeObject(): void
-    {
-        $this->record ??= new ObjectStorage();
+        $this->setRecord($record);
     }
 
     /**
      * Get record
-     *
-     * @return ObjectStorage<object>
+     * 
+     * @return object
      */
-    public function getRecord(): ?ObjectStorage
+    public function getRecord(): object
     {
+        if ($this->record instanceof LazyLoadingProxy) {
+            $this->record->_loadRealInstance();
+        }
         return $this->record;
     }
 
     /**
      * Set record
-     *
-     * @param ObjectStorage<object> $record
+     * 
+     * @param object
      */
-    public function setRecord(ObjectStorage $record): void
+    public function setRecord(object $record): void
     {
         $this->record = $record;
-    }
-
-    /**
-     * Add record
-     *
-     * @param object $record
-     */
-    public function addRecord(object $record): void
-    {
-        $this->record?->attach($record);
-    }
-
-    /**
-     * Remove record
-     *
-     * @param object $record
-     */
-    public function removeRecord(object $record): void
-    {
-        $this->record?->detach($record);
-    }
-
-    /**
-     * Remove all records
-     */
-    public function removeAllRecord(): void
-    {
-        $record = clone $this->record;
-        $this->record->removeAll($record);
     }
 
     /**

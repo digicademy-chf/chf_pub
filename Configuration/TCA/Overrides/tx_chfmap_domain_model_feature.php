@@ -51,6 +51,7 @@ defined('TYPO3') or die();
                         'type' => [
                             'config' => [
                                 'default' => 'publicationRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],

@@ -260,35 +260,42 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'items' => [
+                                'items' => [ // Please also add new items in this list to the overwrite of tx_chfbase_domain_model_extent
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.doi',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.doi',
                                         'value' => 'doi',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.urn',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.urn',
                                         'value' => 'urn',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.edition',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.edition',
                                         'value' => 'edition',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.volume',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.volume',
                                         'value' => 'volume',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.issue',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.issue',
                                         'value' => 'issue',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.issn',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.issn',
                                         'value' => 'issn',
+                                        'group' => 'chfPub',
                                     ],
                                     [
-                                        'label' => 'LLL:EXT:chf_bib/Resources/Private/Language/locallang.xlf:object.extent.type.isbn',
+                                        'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.extent.type.isbn',
                                         'value' => 'isbn',
-                                    ],
+                                        'group' => 'chfPub',
+                                    ]
                                 ],
                             ],
                         ],
@@ -386,6 +393,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'authorshipRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],
@@ -422,6 +430,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'licenceRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],
@@ -669,6 +678,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'linkRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],
@@ -705,6 +715,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'publicationRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],

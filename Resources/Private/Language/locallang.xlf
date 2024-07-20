@@ -139,6 +139,20 @@
             <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
                 <source>Text publications of this database record</source>
             </trans-unit>
+            <!-- Plugin: PubEssay -->
+            <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay">
+                <source>Essay publication</source>
+            </trans-unit>
+            <trans-unit id="plugin.pubEssay.description" resname="plugin.pubEssay.description">
+                <source>View single or listed essays</source>
+            </trans-unit>
+            <!-- Plugin: PubVolume -->
+            <trans-unit id="plugin.pubVolume" resname="plugin.pubVolume">
+                <source>Volume publication</source>
+            </trans-unit>
+            <trans-unit id="plugin.pubVolume.description" resname="plugin.pubVolume.description">
+                <source>View single or listed volumes</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

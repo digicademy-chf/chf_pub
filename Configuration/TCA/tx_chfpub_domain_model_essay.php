@@ -28,7 +28,7 @@ return [
         'sortby'                   => 'sorting',
         'default_sortby'           => 'isHighlight ASC,title ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_pub/Resources/Public/Icons/Essay.svg',
+        'iconfile'                 => 'EXT:chf_pub/Resources/Public/Icons/TableEssay.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',

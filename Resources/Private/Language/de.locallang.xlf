@@ -182,6 +182,24 @@
                 <source>Text publications of this database record</source>
                 <target>Textpublikationen dieses Datenbankeintrags</target>
             </trans-unit>
+            <!-- Plugin: PubEssay -->
+            <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay" approved="yes">
+                <source>Essay publication</source>
+                <target>Aufsatzpublikation</target>
+            </trans-unit>
+            <trans-unit id="plugin.pubEssay.description" resname="plugin.pubEssay.description" approved="yes">
+                <source>View single or listed essays</source>
+                <target>Einzelne oder aufgelistete Aufsätze</target>
+            </trans-unit>
+            <!-- Plugin: PubVolume -->
+            <trans-unit id="plugin.pubVolume" resname="plugin.pubVolume" approved="yes">
+                <source>Volume publication</source>
+                <target>Bandpublikation</target>
+            </trans-unit>
+            <trans-unit id="plugin.pubVolume.description" resname="plugin.pubVolume.description" approved="yes">
+                <source>View single or listed volumes</source>
+                <target>Einzelne oder aufgelistete Bände</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -26,11 +26,11 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_pub/Resources/Public/Icons/TableVolume.svg',
     ],
-    'tx-chfpub-plugin-pub-essays' => [
+    'tx-chfpub-plugin-pub-essay' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginPubEssay.svg',
     ],
-    'tx-chfpub-plugin-pub-volumes' => [
+    'tx-chfpub-plugin-pub-volume' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginPubVolume.svg',
     ],

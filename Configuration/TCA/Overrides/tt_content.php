@@ -7,6 +7,8 @@ declare(strict_types=1);
 # LICENSE.txt file that was distributed with this source code.
 
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 defined('TYPO3') or die();
 
 /**
@@ -19,7 +21,7 @@ defined('TYPO3') or die();
  */
 
 // Add plugin 'PubEssay'
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'CHFPub',
     'PubEssay',
     'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubEssay',
@@ -29,7 +31,7 @@ defined('TYPO3') or die();
 );
 
 // Add plugin 'PubVolume'
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'CHFPub',
     'PubVolume',
     'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubVolume',

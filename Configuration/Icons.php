@@ -26,12 +26,12 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_pub/Resources/Public/Icons/TableVolume.svg',
     ],
-    'tx-chfpub-plugin-pub-essay' => [
+    'tx-chfpub-plugin-stream' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginPubEssay.svg',
+        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginStream.svg',
     ],
-    'tx-chfpub-plugin-pub-volume' => [
+    'tx-chfpub-plugin-books' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginPubVolume.svg',
+        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginBooks.svg',
     ],
 ];

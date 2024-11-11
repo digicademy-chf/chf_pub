@@ -117,18 +117,18 @@
             <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
                 <source>Relevant text publications in the database</source>
             </trans-unit>
-            <!-- Plugin: PubEssay -->
-            <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay">
-                <source>Essay publication</source>
+            <!-- Plugin: Stream -->
+            <trans-unit id="plugin.stream" resname="plugin.stream">
+                <source>Essay stream</source>
             </trans-unit>
-            <trans-unit id="plugin.pubEssay.description" resname="plugin.pubEssay.description">
-                <source>View single or listed essays</source>
+            <trans-unit id="plugin.stream.description" resname="plugin.stream.description">
+                <source>View single or listed essays, e.g., blogs</source>
             </trans-unit>
-            <!-- Plugin: PubVolume -->
-            <trans-unit id="plugin.pubVolume" resname="plugin.pubVolume">
-                <source>Volume publication</source>
+            <!-- Plugin: Books -->
+            <trans-unit id="plugin.books" resname="plugin.books">
+                <source>Book volumes</source>
             </trans-unit>
-            <trans-unit id="plugin.pubVolume.description" resname="plugin.pubVolume.description">
+            <trans-unit id="plugin.books.description" resname="plugin.books.description">
                 <source>View single or listed volumes</source>
             </trans-unit>
         </body>

@@ -13,20 +13,20 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
-// Register 'PubEssay' content element
+// Register 'Stream' content element
 ExtensionUtility::configurePlugin(
     'CHFObject',
-    'PubEssay',
+    'Stream',
     [
         EssayController::class => 'index',
         EssayController::class => 'show',
     ],
 );
 
-// Register 'PubVolume' content element
+// Register 'Books' content element
 ExtensionUtility::configurePlugin(
     'CHFObject',
-    'PubVolume',
+    'Books',
     [
         VolumeController::class => 'index',
         VolumeController::class => 'show',

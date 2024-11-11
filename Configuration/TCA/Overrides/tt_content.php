@@ -20,22 +20,22 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add plugin 'PubEssay'
+// Add plugin 'Stream'
 ExtensionUtility::registerPlugin(
     'CHFPub',
-    'PubEssay',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubEssay',
-    'tx-chfpub-plugin-pub-essay',
+    'Stream',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.stream',
+    'tx-chfpub-plugin-stream',
     'heritage',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubEssay.description',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.stream.description',
 );
 
-// Add plugin 'PubVolume'
+// Add plugin 'Books'
 ExtensionUtility::registerPlugin(
     'CHFPub',
-    'PubVolume',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubVolume',
-    'tx-chfpub-plugin-pub-volume',
+    'Books',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.books',
+    'tx-chfpub-plugin-books',
     'heritage',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.pubVolume.description',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.books.description',
 );

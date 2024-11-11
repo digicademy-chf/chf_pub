@@ -153,21 +153,21 @@
                 <source>Relevant text publications in the database</source>
                 <target>Angabe relevanter Textpublikationen in der Datenbank</target>
             </trans-unit>
-            <!-- Plugin: PubEssay -->
-            <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay" approved="yes">
-                <source>Essay publication</source>
-                <target>Aufsatzpublikation</target>
+            <!-- Plugin: Stream -->
+            <trans-unit id="plugin.stream" resname="plugin.stream" approved="yes">
+                <source>Essay stream</source>
+                <target>Aufsatzstrom</target>
             </trans-unit>
-            <trans-unit id="plugin.pubEssay.description" resname="plugin.pubEssay.description" approved="yes">
-                <source>View single or listed essays</source>
-                <target>Einzelne oder aufgelistete Aufsätze</target>
+            <trans-unit id="plugin.stream.description" resname="plugin.stream.description" approved="yes">
+                <source>View single or listed essays, e.g., blogs</source>
+                <target>Einzelne oder aufgelistete Aufsätze, z.B. Blogs</target>
             </trans-unit>
-            <!-- Plugin: PubVolume -->
-            <trans-unit id="plugin.pubVolume" resname="plugin.pubVolume" approved="yes">
-                <source>Volume publication</source>
-                <target>Bandpublikation</target>
+            <!-- Plugin: Books -->
+            <trans-unit id="plugin.books" resname="plugin.books" approved="yes">
+                <source>Book volumes</source>
+                <target>Buchbände</target>
             </trans-unit>
-            <trans-unit id="plugin.pubVolume.description" resname="plugin.pubVolume.description" approved="yes">
+            <trans-unit id="plugin.books.description" resname="plugin.books.description" approved="yes">
                 <source>View single or listed volumes</source>
                 <target>Einzelne oder aufgelistete Bände</target>
             </trans-unit>

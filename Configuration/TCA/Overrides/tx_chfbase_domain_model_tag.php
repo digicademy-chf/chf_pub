@@ -18,29 +18,6 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add column 'asLabelOfVolume'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
-    [
-        'asLabelOfVolume' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
-                'MM' => 'tx_chfpub_domain_model_volume_tag_label_mm',
-                'MM_opposite_field' => 'label',
-                'multiple' => 1,
-                'size' => 5,
-                'autoSizeMax' => 10,
-            ],
-        ],
-    ]
-);
-
 // Add column 'asLabelOfEssay'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
     [
@@ -55,6 +32,29 @@ defined('TYPO3') or die();
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfpub_domain_model_essay_tag_label_mm',
+                'MM_opposite_field' => 'label',
+                'multiple' => 1,
+                'size' => 5,
+                'autoSizeMax' => 10,
+            ],
+        ],
+    ]
+);
+
+// Add column 'asLabelOfVolume'
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
+    [
+        'asLabelOfVolume' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume',
+            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfpub_domain_model_volume',
+                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
+                'MM' => 'tx_chfpub_domain_model_volume_tag_label_mm',
                 'MM_opposite_field' => 'label',
                 'multiple' => 1,
                 'size' => 5,

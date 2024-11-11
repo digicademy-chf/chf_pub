@@ -12,7 +12,6 @@ namespace Digicademy\CHFPub\Domain\Model;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Model\AbstractRelation;
 
 defined('TYPO3') or die();
@@ -31,20 +30,20 @@ class PublicationRelation extends AbstractRelation
     protected object|null $record = null;
 
     /**
-     * Volume to relate to the record
-     * 
-     * @var Volume|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Volume|LazyLoadingProxy|null $volume = null;
-
-    /**
      * Essay to relate to the record
      * 
      * @var Essay|LazyLoadingProxy|null
      */
     #[Lazy()]
     protected Essay|LazyLoadingProxy|null $essay = null;
+
+    /**
+     * Volume to relate to the record
+     * 
+     * @var Volume|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Volume|LazyLoadingProxy|null $volume = null;
 
     /**
      * Page number or other location
@@ -62,12 +61,12 @@ class PublicationRelation extends AbstractRelation
     /**
      * Construct object
      *
+     * @param object $record
      * @param object $parentResource
      * @param string $uuid
-     * @param object $record
      * @return PublicationRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record)
+    public function __construct(object $record, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -100,29 +99,6 @@ class PublicationRelation extends AbstractRelation
     }
 
     /**
-     * Get volume
-     * 
-     * @return Volume
-     */
-    public function getVolume(): Volume
-    {
-        if ($this->volume instanceof LazyLoadingProxy) {
-            $this->volume->_loadRealInstance();
-        }
-        return $this->volume;
-    }
-
-    /**
-     * Set volume
-     * 
-     * @param Volume
-     */
-    public function setVolume(Volume $volume): void
-    {
-        $this->volume = $volume;
-    }
-
-    /**
      * Get essay
      * 
      * @return Essay
@@ -143,6 +119,29 @@ class PublicationRelation extends AbstractRelation
     public function setEssay(Essay $essay): void
     {
         $this->essay = $essay;
+    }
+
+    /**
+     * Get volume
+     * 
+     * @return Volume
+     */
+    public function getVolume(): Volume
+    {
+        if ($this->volume instanceof LazyLoadingProxy) {
+            $this->volume->_loadRealInstance();
+        }
+        return $this->volume;
+    }
+
+    /**
+     * Set volume
+     * 
+     * @param Volume
+     */
+    public function setVolume(Volume $volume): void
+    {
+        $this->volume = $volume;
     }
 
     /**

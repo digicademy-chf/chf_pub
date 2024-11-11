@@ -127,35 +127,6 @@
                 <source>List of publication relations that use this essay</source>
                 <target>Liste der Publikationsrelationen, die diesen Aufsatz verwenden</target>
             </trans-unit>
-            <!-- Object: Extent -->
-            <trans-unit id="object.extent.type.doi" resname="object.extent.type.doi" approved="yes">
-                <source>DOI</source>
-                <target>DOI</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn" approved="yes">
-                <source>Further URN (incl. Handle)</source>
-                <target>Andere URN (inkl. Handle)</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition" approved="yes">
-                <source>Edition</source>
-                <target>Ausgabe</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume" approved="yes">
-                <source>Volume</source>
-                <target>Band</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue" approved="yes">
-                <source>Issue</source>
-                <target>Heftnummer</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn" approved="yes">
-                <source>ISSN</source>
-                <target>ISSN</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn" approved="yes">
-                <source>ISBN</source>
-                <target>ISBN</target>
-            </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.asLabelOfVolume" resname="object.labelTag.asLabelOfVolume" approved="yes">
                 <source>Usage as label of a volume</source>
@@ -179,8 +150,8 @@
                 <target>Textpublikation</target>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description" approved="yes">
-                <source>Text publications of this database record</source>
-                <target>Textpublikationen dieses Datenbankeintrags</target>
+                <source>Relevant text publications in the database</source>
+                <target>Angabe relevanter Textpublikationen in der Datenbank</target>
             </trans-unit>
             <!-- Plugin: PubEssay -->
             <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay" approved="yes">

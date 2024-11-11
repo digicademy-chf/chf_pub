@@ -36,23 +36,6 @@ defined('TYPO3') or die();
 // Add columns 'volume', 'essay', and 'volumePosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_relation',
     [
-        'volume' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
-                'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
-                'multiple' => 1,
-                'sortItems' => [
-                    'label' => 'asc',
-                ],
-            ],
-        ],
         'essay' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -64,6 +47,23 @@ defined('TYPO3') or die();
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_essay_essay_mm',
+                'multiple' => 1,
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
+            ],
+        ],
+        'volume' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume',
+            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationRelation.volume.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_chfpub_domain_model_volume',
+                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
+                'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
                 'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
@@ -90,12 +90,12 @@ defined('TYPO3') or die();
 // Create palette 'volumeEssayPosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tx_chfbase_domain_model_relation',
-    'volumeEssayPosition',
+    'essayVolumePosition',
     'volume,essay,--linebreak--,position,'
 );
 
 // Add type 'publicationRelation' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_relation']['types'] += ['publicationRelation' => [
-    'showitem' => 'type,record,--palette--;;volumeEssayPosition,description,
-    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
+    'showitem' => 'type,record,--palette--;;essayVolumePosition,description,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
 ]];

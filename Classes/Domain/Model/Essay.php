@@ -25,22 +25,6 @@ defined('TYPO3') or die();
 class Essay extends AbstractHeritage
 {
     /**
-     * Volume that this essay is part of
-     * 
-     * @var Volume|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Volume|LazyLoadingProxy|null $parentVolume = null;
-
-    /**
-     * Essay that this essay is part of
-     * 
-     * @var Essay|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Essay|LazyLoadingProxy|null $parentEssay = null;
-
-    /**
      * Name of this essay
      * 
      * @var string
@@ -54,7 +38,7 @@ class Essay extends AbstractHeritage
     protected string $title = '';
 
     /**
-     * List of extents and identifiers relevant to this entry
+     * List of extents relevant to this entry
      * 
      * @var ?ObjectStorage<Extent>
      */
@@ -65,12 +49,28 @@ class Essay extends AbstractHeritage
     protected ?ObjectStorage $extent = null;
 
     /**
-     * List of essays that are part of this volume
+     * List of essays that are part of this essay
      * 
      * @var ?ObjectStorage<Essay>
      */
     #[Lazy()]
     protected ?ObjectStorage $essay = null;
+
+    /**
+     * Essay that this essay is part of
+     * 
+     * @var Essay|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Essay|LazyLoadingProxy|null $parentEssay = null;
+
+    /**
+     * Volume that this essay is part of
+     * 
+     * @var Volume|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Volume|LazyLoadingProxy|null $parentVolume = null;
 
     /**
      * List of publication relations that use this essay
@@ -83,12 +83,12 @@ class Essay extends AbstractHeritage
     /**
      * Construct object
      *
+     * @param string $title
      * @param object $parentResource
      * @param string $uuid
-     * @param string $title
      * @return Essay
      */
-    public function __construct(object $parentResource, string $uuid, string $title)
+    public function __construct(string $title, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -104,52 +104,6 @@ class Essay extends AbstractHeritage
         $this->extent ??= new ObjectStorage();
         $this->essay ??= new ObjectStorage();
         $this->asEssayOfPublicationRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent volume
-     * 
-     * @return Volume
-     */
-    public function getParentVolume(): Volume
-    {
-        if ($this->parentVolume instanceof LazyLoadingProxy) {
-            $this->parentVolume->_loadRealInstance();
-        }
-        return $this->parentVolume;
-    }
-
-    /**
-     * Set parent volume
-     * 
-     * @param Volume
-     */
-    public function setParentVolume(Volume $parentVolume): void
-    {
-        $this->parentVolume = $parentVolume;
-    }
-
-    /**
-     * Get parent essay
-     * 
-     * @return Essay
-     */
-    public function getParentEssay(): Essay
-    {
-        if ($this->parentEssay instanceof LazyLoadingProxy) {
-            $this->parentEssay->_loadRealInstance();
-        }
-        return $this->parentEssay;
-    }
-
-    /**
-     * Set parent essay
-     * 
-     * @param Essay
-     */
-    public function setParentEssay(Essay $parentEssay): void
-    {
-        $this->parentEssay = $parentEssay;
     }
 
     /**
@@ -268,6 +222,52 @@ class Essay extends AbstractHeritage
     {
         $essay = clone $this->essay;
         $this->essay->removeAll($essay);
+    }
+
+    /**
+     * Get parent essay
+     * 
+     * @return Essay
+     */
+    public function getParentEssay(): Essay
+    {
+        if ($this->parentEssay instanceof LazyLoadingProxy) {
+            $this->parentEssay->_loadRealInstance();
+        }
+        return $this->parentEssay;
+    }
+
+    /**
+     * Set parent essay
+     * 
+     * @param Essay
+     */
+    public function setParentEssay(Essay $parentEssay): void
+    {
+        $this->parentEssay = $parentEssay;
+    }
+
+    /**
+     * Get parent volume
+     * 
+     * @return Volume
+     */
+    public function getParentVolume(): Volume
+    {
+        if ($this->parentVolume instanceof LazyLoadingProxy) {
+            $this->parentVolume->_loadRealInstance();
+        }
+        return $this->parentVolume;
+    }
+
+    /**
+     * Set parent volume
+     * 
+     * @param Volume
+     */
+    public function setParentVolume(Volume $parentVolume): void
+    {
+        $this->parentVolume = $parentVolume;
     }
 
     /**

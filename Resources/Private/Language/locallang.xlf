@@ -97,28 +97,6 @@
             <trans-unit id="object.essay.asEssayOfPublicationRelation.description" resname="object.essay.asEssayOfPublicationRelation.description">
                 <source>List of publication relations that use this essay</source>
             </trans-unit>
-            <!-- Object: Extent -->
-            <trans-unit id="object.extent.type.doi" resname="object.extent.type.doi">
-                <source>DOI</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn">
-                <source>Further URN (incl. Handle)</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
-                <source>Edition</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume">
-                <source>Volume</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue">
-                <source>Issue</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn">
-                <source>ISSN</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn">
-                <source>ISBN</source>
-            </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.asLabelOfVolume" resname="object.labelTag.asLabelOfVolume">
                 <source>Usage as label of a volume</source>
@@ -137,7 +115,7 @@
                 <source>Text publication</source>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
-                <source>Text publications of this database record</source>
+                <source>Relevant text publications in the database</source>
             </trans-unit>
             <!-- Plugin: PubEssay -->
             <trans-unit id="plugin.pubEssay" resname="plugin.pubEssay">

@@ -37,7 +37,7 @@ class Volume extends AbstractHeritage
     protected string $title = '';
 
     /**
-     * List of extents and identifiers relevant to this entry
+     * List of extents relevant to this entry
      * 
      * @var ?ObjectStorage<Extent>
      */
@@ -48,7 +48,7 @@ class Volume extends AbstractHeritage
     protected ?ObjectStorage $extent = null;
 
     /**
-     * List of essays that are part of this essay
+     * List of essays that are part of this volume
      * 
      * @var ?ObjectStorage<Essay>
      */
@@ -66,12 +66,12 @@ class Volume extends AbstractHeritage
     /**
      * Construct object
      *
+     * @param string $title
      * @param object $parentResource
      * @param string $uuid
-     * @param string $title
      * @return Volume
      */
-    public function __construct(object $parentResource, string $uuid, string $title)
+    public function __construct(string $title, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

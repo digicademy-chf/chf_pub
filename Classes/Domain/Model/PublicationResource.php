@@ -24,23 +24,12 @@ defined('TYPO3') or die();
 class PublicationResource extends AbstractResource
 {
     /**
-     * Resource to use as a glossary for this resource
+     * Glossary of this resource
      * 
      * @var GlossaryResource|LazyLoadingProxy|null
      */
     #[Lazy()]
     protected GlossaryResource|LazyLoadingProxy|null $glossary = null;
-
-    /**
-     * List of all volumes compiled in this resource
-     * 
-     * @var ?ObjectStorage<Volume>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $allVolumes = null;
 
     /**
      * List of all essays compiled in this resource
@@ -54,15 +43,26 @@ class PublicationResource extends AbstractResource
     protected ?ObjectStorage $allEssays = null;
 
     /**
+     * List of all volumes compiled in this resource
+     * 
+     * @var ?ObjectStorage<Volume>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $allVolumes = null;
+
+    /**
      * Construct object
      *
-     * @param string $uuid
      * @param string $langCode
+     * @param string $uuid
      * @return PublicationResource
      */
-    public function __construct(string $uuid, string $langCode)
+    public function __construct(string $langCode, string $uuid)
     {
-        parent::__construct($uuid, $langCode);
+        parent::__construct($langCode, $uuid);
         $this->initializeObject();
 
         $this->setType('publicationResource');
@@ -73,8 +73,8 @@ class PublicationResource extends AbstractResource
      */
     public function initializeObject(): void
     {
-        $this->allVolumes ??= new ObjectStorage();
         $this->allEssays ??= new ObjectStorage();
+        $this->allVolumes ??= new ObjectStorage();
     }
 
     /**
@@ -98,55 +98,6 @@ class PublicationResource extends AbstractResource
     public function setGlossary(GlossaryResource $glossary): void
     {
         $this->glossary = $glossary;
-    }
-
-    /**
-     * Get all volumes
-     *
-     * @return ObjectStorage<Volume>
-     */
-    public function getAllVolumes(): ?ObjectStorage
-    {
-        return $this->allVolumes;
-    }
-
-    /**
-     * Set all volumes
-     *
-     * @param ObjectStorage<Volume> $allVolumes
-     */
-    public function setAllVolumes(ObjectStorage $allVolumes): void
-    {
-        $this->allVolumes = $allVolumes;
-    }
-
-    /**
-     * Add all volumes
-     *
-     * @param Volume $allVolumes
-     */
-    public function addAllVolumes(Volume $allVolumes): void
-    {
-        $this->allVolumes?->attach($allVolumes);
-    }
-
-    /**
-     * Remove all volumes
-     *
-     * @param Volume $allVolumes
-     */
-    public function removeAllVolumes(Volume $allVolumes): void
-    {
-        $this->allVolumes?->detach($allVolumes);
-    }
-
-    /**
-     * Remove all all volumes
-     */
-    public function removeAllAllVolumes(): void
-    {
-        $allVolumes = clone $this->allVolumes;
-        $this->allVolumes->removeAll($allVolumes);
     }
 
     /**
@@ -196,5 +147,54 @@ class PublicationResource extends AbstractResource
     {
         $allEssays = clone $this->allEssays;
         $this->allEssays->removeAll($allEssays);
+    }
+
+    /**
+     * Get all volumes
+     *
+     * @return ObjectStorage<Volume>
+     */
+    public function getAllVolumes(): ?ObjectStorage
+    {
+        return $this->allVolumes;
+    }
+
+    /**
+     * Set all volumes
+     *
+     * @param ObjectStorage<Volume> $allVolumes
+     */
+    public function setAllVolumes(ObjectStorage $allVolumes): void
+    {
+        $this->allVolumes = $allVolumes;
+    }
+
+    /**
+     * Add all volumes
+     *
+     * @param Volume $allVolumes
+     */
+    public function addAllVolumes(Volume $allVolumes): void
+    {
+        $this->allVolumes?->attach($allVolumes);
+    }
+
+    /**
+     * Remove all volumes
+     *
+     * @param Volume $allVolumes
+     */
+    public function removeAllVolumes(Volume $allVolumes): void
+    {
+        $this->allVolumes?->detach($allVolumes);
+    }
+
+    /**
+     * Remove all all volumes
+     */
+    public function removeAllAllVolumes(): void
+    {
+        $allVolumes = clone $this->allVolumes;
+        $this->allVolumes->removeAll($allVolumes);
     }
 }

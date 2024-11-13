@@ -18,10 +18,10 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add column 'publicationRelation'
+// Add column 'publication_relation'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_period',
     [
-        'publicationRelation' => [
+        'publication_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.abstractHeritage.publicationRelation',
@@ -32,7 +32,7 @@ defined('TYPO3') or die();
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'publicationRelation',
+                    'fieldname' => 'publication_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,

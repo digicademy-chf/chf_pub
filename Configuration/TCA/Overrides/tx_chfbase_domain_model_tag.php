@@ -18,10 +18,10 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add column 'asLabelOfEssay'
+// Add columns 'as_label_of_essay' and 'as_label_of_volume'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
     [
-        'asLabelOfEssay' => [
+        'as_label_of_essay' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfEssay',
@@ -38,13 +38,7 @@ defined('TYPO3') or die();
                 'autoSizeMax' => 10,
             ],
         ],
-    ]
-);
-
-// Add column 'asLabelOfVolume'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
-    [
-        'asLabelOfVolume' => [
+        'as_label_of_volume' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume',

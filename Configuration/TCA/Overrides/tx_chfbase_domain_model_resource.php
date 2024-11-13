@@ -26,10 +26,10 @@ defined('TYPO3') or die();
     ]
 );
 
-// Add columns 'allVolumes' and 'allEssays'
+// Add columns 'all_essays' and 'all_volumes'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_resource',
     [
-        'allEssays' => [
+        'all_essays' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allEssays',
@@ -37,7 +37,7 @@ defined('TYPO3') or die();
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
-                'foreign_field' => 'parentResource',
+                'foreign_field' => 'parent_resource',
                 'foreign_sortby' => 'sorting',
                 'appearance' => [
                     'collapseAll' => true,
@@ -51,7 +51,7 @@ defined('TYPO3') or die();
                 ],
             ],
         ],
-        'allVolumes' => [
+        'all_volumes' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allVolumes',
@@ -59,7 +59,7 @@ defined('TYPO3') or die();
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'foreign_field' => 'parentResource',
+                'foreign_field' => 'parent_resource',
                 'foreign_sortby' => 'sorting',
                 'appearance' => [
                     'collapseAll' => true,
@@ -79,7 +79,7 @@ defined('TYPO3') or die();
 // Add type 'publicationResource' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_resource']['types'] += ['publicationResource' => [
    'showitem' => 'type,--palette--;;titleLangCodeDescriptionGlossary,
-   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,allEssays,allVolumes,allAgents,allLocations,allPeriods,allTags,allKeywords,allRelations,allFileGroups,
+   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,all_essays,all_volumes,all_agents,all_locations,all_periods,all_tags,all_keywords,all_relations,all_file_groups,
    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuidSameAs,
    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,--palette--;;authorshipRelationLicenceRelation,
    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,--palette--;;importOriginImportState,',

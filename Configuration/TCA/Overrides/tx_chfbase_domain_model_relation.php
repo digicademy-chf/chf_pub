@@ -33,7 +33,7 @@ defined('TYPO3') or die();
     ]
 );
 
-// Add columns 'volume', 'essay', and 'volumePosition'
+// Add columns 'volume', 'essay', and 'position'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_relation',
     [
         'essay' => [
@@ -87,15 +87,15 @@ defined('TYPO3') or die();
     ]
 );
 
-// Create palette 'volumeEssayPosition'
+// Create palette 'essayVolumePosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tx_chfbase_domain_model_relation',
     'essayVolumePosition',
-    'volume,essay,--linebreak--,position,'
+    'essay,volume,--linebreak--,position,'
 );
 
 // Add type 'publicationRelation' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_relation']['types'] += ['publicationRelation' => [
     'showitem' => 'type,record,--palette--;;essayVolumePosition,description,
-    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuid,',
 ]];

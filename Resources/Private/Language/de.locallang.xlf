@@ -156,7 +156,7 @@
             <!-- Plugin: Stream -->
             <trans-unit id="plugin.stream" resname="plugin.stream" approved="yes">
                 <source>Essay stream</source>
-                <target>Aufsatzstrom</target>
+                <target>Aufsatzliste</target>
             </trans-unit>
             <trans-unit id="plugin.stream.description" resname="plugin.stream.description" approved="yes">
                 <source>View single or listed essays, e.g., blogs</source>

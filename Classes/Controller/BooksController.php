@@ -17,9 +17,9 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 defined('TYPO3') or die();
 
 /**
- * Controller for Volume
+ * Controller for Books
  */
-class VolumeController extends ActionController
+class BooksController extends ActionController
 {
     private VolumeRepository $volumeRepository;
 

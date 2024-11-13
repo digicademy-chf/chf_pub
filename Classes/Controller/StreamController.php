@@ -17,9 +17,9 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 defined('TYPO3') or die();
 
 /**
- * Controller for Essay
+ * Controller for Stream
  */
-class EssayController extends ActionController
+class StreamController extends ActionController
 {
     private EssayRepository $essayRepository;
 

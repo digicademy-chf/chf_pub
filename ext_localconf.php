@@ -7,28 +7,30 @@ declare(strict_types=1);
 # LICENSE.txt file that was distributed with this source code.
 
 
-use Digicademy\CHFPub\Controller\EssayController;
-use Digicademy\CHFPub\Controller\VolumeController;
+use Digicademy\CHFPub\Controller\StreamController;
+use Digicademy\CHFPub\Controller\BooksController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
 // Register 'Stream' content element
 ExtensionUtility::configurePlugin(
-    'CHFObject',
+    'CHFPub',
     'Stream',
     [
-        EssayController::class => 'index',
-        EssayController::class => 'show',
+        StreamController::class => 'index, show',
     ],
+    [], // None of the actions are non-cacheable
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 // Register 'Books' content element
 ExtensionUtility::configurePlugin(
-    'CHFObject',
+    'CHFPub',
     'Books',
     [
-        VolumeController::class => 'index',
-        VolumeController::class => 'show',
+        BooksController::class => 'index, show',
     ],
+    [], // None of the actions are non-cacheable
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );

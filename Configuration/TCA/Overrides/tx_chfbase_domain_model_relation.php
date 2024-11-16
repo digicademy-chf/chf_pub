@@ -48,6 +48,12 @@ defined('TYPO3') or die();
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_essay_essay_mm',
                 'multiple' => 1,
+                'items' => [
+                    [
+                        'label' => '',
+                        'value' => 0,
+                    ],
+                ],
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -65,6 +71,12 @@ defined('TYPO3') or die();
                 'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
                 'multiple' => 1,
+                'items' => [
+                    [
+                        'label' => '',
+                        'value' => 0,
+                    ],
+                ],
                 'sortItems' => [
                     'label' => 'asc',
                 ],

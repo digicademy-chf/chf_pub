@@ -25,9 +25,17 @@ return [
             'publicationResource' => Digicademy\CHFPub\Domain\Model\PublicationResource::class,
         ],
     ],
+    Digicademy\CHFPub\Domain\Model\PublicationResource::class => [
+        'tableName' => 'tx_chfbase_domain_model_resource',
+        'recordType' => 'publicationResource',
+    ],
     Digicademy\CHFBase\Domain\Model\AbstractRelation::class => [
         'subclasses' => [
             'publicationRelation' => Digicademy\CHFPub\Domain\Model\PublicationRelation::class,
         ],
+    ],
+    Digicademy\CHFPub\Domain\Model\PublicationRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'publicationRelation',
     ],
 ];

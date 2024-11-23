@@ -84,11 +84,11 @@ class Essay extends AbstractHeritage
      * Construct object
      *
      * @param string $title
-     * @param object $parentResource
+     * @param PublicationResource $parentResource
      * @param string $uuid
      * @return Essay
      */
-    public function __construct(string $title, object $parentResource, string $uuid)
+    public function __construct(string $title, PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

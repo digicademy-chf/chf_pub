@@ -13,6 +13,17 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use Digicademy\CHFBase\Domain\Model\AbstractRelation;
+use Digicademy\CHFBase\Domain\Model\Agent;
+use Digicademy\CHFBase\Domain\Model\Location;
+use Digicademy\CHFBase\Domain\Model\Period;
+use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
+use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMap\Domain\Model\FeatureCollection;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 
 defined('TYPO3') or die();
 
@@ -24,10 +35,10 @@ class PublicationRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var object|LazyLoadingProxy|null
+     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected object|null $record = null;
+    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
 
     /**
      * Essay to relate to the record
@@ -61,12 +72,12 @@ class PublicationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $record
-     * @param object $parentResource
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
+     * @param PublicationResource $parentResource
      * @param string $uuid
      * @return PublicationRelation
      */
-    public function __construct(object $record, object $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -78,9 +89,9 @@ class PublicationRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return object
+     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function getRecord(): object
+    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -91,9 +102,9 @@ class PublicationRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param object
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function setRecord(object $record): void
+    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
     {
         $this->record = $record;
     }

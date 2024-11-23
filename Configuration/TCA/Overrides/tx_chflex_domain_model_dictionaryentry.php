@@ -10,7 +10,7 @@ declare(strict_types=1);
 defined('TYPO3') or die();
 
 /**
- * BibliographicEntry and its properties
+ * DictionaryEntry and its properties
  * 
  * Extension of a database table and its editing interface in the
  * TYPO3 backend. This also serves as the basis for the Extbase
@@ -19,7 +19,7 @@ defined('TYPO3') or die();
  */
 
 // Add column 'publication_relation'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbib_domain_model_bibliographic_entry',
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chflex_domain_model_dictionaryentry',
     [
         'publication_relation' => [
             'exclude' => true,
@@ -31,7 +31,7 @@ defined('TYPO3') or die();
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbib_domain_model_bibliographic_relation',
+                    'tablenames' => 'tx_chflex_domain_model_dictionaryentry',
                     'fieldname' => 'publication_relation',
                 ],
                 'MM_opposite_field' => 'record',

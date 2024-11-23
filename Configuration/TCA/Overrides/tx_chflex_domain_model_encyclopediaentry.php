@@ -19,7 +19,7 @@ defined('TYPO3') or die();
  */
 
 // Add column 'publication_relation'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chflex_domain_model_encyclopedia_entry',
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chflex_domain_model_encyclopediaentry',
     [
         'publication_relation' => [
             'exclude' => true,
@@ -31,7 +31,7 @@ defined('TYPO3') or die();
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
-                    'tablenames' => 'tx_chflex_domain_model_encyclopedia_entry',
+                    'tablenames' => 'tx_chflex_domain_model_encyclopediaentry',
                     'fieldname' => 'publication_relation',
                 ],
                 'MM_opposite_field' => 'record',

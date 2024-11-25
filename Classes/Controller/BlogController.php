@@ -9,28 +9,28 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFPub\Controller;
 
-use Psr\Http\Message\ResponseInterface;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Digicademy\CHFPub\Domain\Model\Essay;
-use Digicademy\CHFPub\Domain\Repository\EssayRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for Stream
+ * Controller for Blog
  */
-class StreamController extends ActionController
+class BlogController extends ActionController
 {
-    private EssayRepository $essayRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectEssayRepository(EssayRepository $essayRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->essayRepository = $essayRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('essays', $this->essayRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy(['type' => 'publicationResource']));
         return $this->htmlResponse();
     }
 

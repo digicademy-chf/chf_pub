@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFPub\Controller;
 
-use Psr\Http\Message\ResponseInterface;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Digicademy\CHFPub\Domain\Model\Volume;
-use Digicademy\CHFPub\Domain\Repository\VolumeRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -21,16 +21,16 @@ defined('TYPO3') or die();
  */
 class BooksController extends ActionController
 {
-    private VolumeRepository $volumeRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectVolumeRepository(VolumeRepository $volumeRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->volumeRepository = $volumeRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('volumes', $this->volumeRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy(['type' => 'publicationResource']));
         return $this->htmlResponse();
     }
 

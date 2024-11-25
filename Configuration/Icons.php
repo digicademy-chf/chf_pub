@@ -26,9 +26,9 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_pub/Resources/Public/Icons/TableVolume.svg',
     ],
-    'tx-chfpub-plugin-stream' => [
+    'tx-chfpub-plugin-blog' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginStream.svg',
+        'source' => 'EXT:chf_pub/Resources/Public/Icons/PluginBlog.svg',
     ],
     'tx-chfpub-plugin-books' => [
         'provider' => SvgIconProvider::class,

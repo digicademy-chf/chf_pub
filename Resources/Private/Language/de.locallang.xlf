@@ -153,23 +153,23 @@
                 <source>Relevant text publications in the database</source>
                 <target>Angabe relevanter Textpublikationen in der Datenbank</target>
             </trans-unit>
-            <!-- Plugin: Stream -->
-            <trans-unit id="plugin.stream" resname="plugin.stream" approved="yes">
-                <source>Essay stream</source>
-                <target>Aufsatzliste</target>
+            <!-- Plugin: Blog -->
+            <trans-unit id="plugin.blog" resname="plugin.blog" approved="yes">
+                <source>Blog/Journal</source>
+                <target>Blog/Zeitschrift</target>
             </trans-unit>
-            <trans-unit id="plugin.stream.description" resname="plugin.stream.description" approved="yes">
-                <source>View single or listed essays, e.g., blogs</source>
-                <target>Einzelne oder aufgelistete Aufsätze, z.B. Blogs</target>
+            <trans-unit id="plugin.blog.description" resname="plugin.blog.description" approved="yes">
+                <source>List and show essays (continuous)</source>
+                <target>Aufsätze auflisten und anzeigen (fortlaufend)</target>
             </trans-unit>
             <!-- Plugin: Books -->
             <trans-unit id="plugin.books" resname="plugin.books" approved="yes">
-                <source>Book volumes</source>
-                <target>Buchbände</target>
+                <source>Books</source>
+                <target>Bücher</target>
             </trans-unit>
             <trans-unit id="plugin.books.description" resname="plugin.books.description" approved="yes">
-                <source>View single or listed volumes</source>
-                <target>Einzelne oder aufgelistete Bände</target>
+                <source>List and show volumes (traditional)</source>
+                <target>Bände auflisten und anzeigen (traditionell)</target>
             </trans-unit>
         </body>
     </file>

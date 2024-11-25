@@ -20,14 +20,14 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add plugin 'Stream'
+// Add plugin 'Blog'
 ExtensionUtility::registerPlugin(
     'CHFPub',
-    'Stream',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.stream',
-    'tx-chfpub-plugin-stream',
+    'Blog',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.blog',
+    'tx-chfpub-plugin-blog',
     'heritage',
-    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.stream.description',
+    'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.blog.description',
 );
 
 // Add plugin 'Books'

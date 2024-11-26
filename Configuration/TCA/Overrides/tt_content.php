@@ -7,6 +7,7 @@ declare(strict_types=1);
 # LICENSE.txt file that was distributed with this source code.
 
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
@@ -38,4 +39,26 @@ ExtensionUtility::registerPlugin(
     'tx-chfpub-plugin-books',
     'heritage',
     'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.books.description',
+);
+
+// Add data tab to plugin form
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    '--div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.data,pi_flexform',
+    'chfpub_blog,chfpub_books',
+    'after:subheader',
+);
+
+// Add form for plugin 'Blog'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
+    'chfpub_blog',
+);
+
+// Add form for plugin 'Books'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
+    'chfpub_books',
 );

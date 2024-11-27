@@ -12,6 +12,7 @@ namespace Digicademy\CHFPub\Controller;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Digicademy\CHFPub\Domain\Model\Essay;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -28,16 +29,43 @@ class BlogController extends ActionController
         $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
+    /**
+     * Show essay list
+     *
+     * @return ResponseInterface
+     */
     public function indexAction(): ResponseInterface
     {
+        // Get resource
         $resourceIdentifier = $this->settings['resource'];
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 
+    /**
+     * Show single essay
+     *
+     * @param Volume $volume
+     * @return ResponseInterface
+     */
     public function showAction(Essay $essay): ResponseInterface
     {
+        // Get essay
         $this->view->assign('essay', $essay);
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 }

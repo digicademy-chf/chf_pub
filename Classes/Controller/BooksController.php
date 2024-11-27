@@ -12,6 +12,7 @@ namespace Digicademy\CHFPub\Controller;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Digicademy\CHFPub\Domain\Model\Volume;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -28,16 +29,43 @@ class BooksController extends ActionController
         $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
+    /**
+     * Show volume list
+     *
+     * @return ResponseInterface
+     */
     public function indexAction(): ResponseInterface
     {
+        // Get resource
         $resourceIdentifier = $this->settings['resource'];
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 
+    /**
+     * Show single volume
+     *
+     * @param Volume $volume
+     * @return ResponseInterface
+     */
     public function showAction(Volume $volume): ResponseInterface
     {
+        // Get essay
         $this->view->assign('volume', $volume);
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 }

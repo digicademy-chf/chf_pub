@@ -20,7 +20,6 @@ use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
 use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
 use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\FeatureCollection;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
@@ -35,10 +34,10 @@ class PublicationRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
+     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
+    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
 
     /**
      * Essay to relate to the record
@@ -72,12 +71,12 @@ class PublicationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param PublicationResource $parentResource
      * @param string $uuid
      * @return PublicationRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, PublicationResource $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -89,9 +88,9 @@ class PublicationRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -102,9 +101,9 @@ class PublicationRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
+    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
     {
         $this->record = $record;
     }

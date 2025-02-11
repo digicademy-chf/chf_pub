@@ -73,13 +73,11 @@ class PublicationRelation extends AbstractRelation
      *
      * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param PublicationResource $parentResource
-     * @param string $iri
-     * @param string $uuid
      * @return PublicationRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, PublicationResource $parentResource, string $iri, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, PublicationResource $parentResource)
     {
-        parent::__construct($parentResource, $iri, $uuid);
+        parent::__construct($parentResource);
         $this->initializeObject();
 
         $this->setType('publicationRelation');

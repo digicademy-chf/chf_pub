@@ -68,13 +68,11 @@ class Volume extends AbstractHeritage
      *
      * @param string $title
      * @param PublicationResource $parentResource
-     * @param string $iri
-     * @param string $uuid
      * @return Volume
      */
-    public function __construct(string $title, PublicationResource $parentResource, string $iri, string $uuid)
+    public function __construct(string $title, PublicationResource $parentResource)
     {
-        parent::__construct($parentResource, $iri, $uuid);
+        parent::__construct($parentResource);
         $this->initializeObject();
 
         $this->setTitle($title);

@@ -8,22 +8,6 @@
                 <source>Text publication</source>
                 <target>Textpublikation</target>
             </trans-unit>
-            <trans-unit id="object.publicationResource.allVolumes" resname="object.publicationResource.allVolumes" approved="yes">
-                <source>All volumes</source>
-                <target>Alle Bände</target>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allVolumes.description" resname="object.publicationResource.allVolumes.description" approved="yes">
-                <source>List of all volumes compiled in this resource</source>
-                <target>Liste aller Bände, die in dieser Ressource verzeichnet sind</target>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allEssays" resname="object.publicationResource.allEssays" approved="yes">
-                <source>All essays</source>
-                <target>Alle Aufsätze</target>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allEssays.description" resname="object.publicationResource.allEssays.description" approved="yes">
-                <source>List of all essays compiled in this resource</source>
-                <target>Liste aller Aufsätze, die in dieser Ressource verzeichnet sind</target>
-            </trans-unit>
             <!-- Object: PublicationRelation -->
             <trans-unit id="object.publicationRelation.type.publicationRelation" resname="object.publicationRelation.type.publicationRelation" approved="yes">
                 <source>Publication relation</source>
@@ -74,14 +58,6 @@
                 <source>List of essays that are part of this volume</source>
                 <target>Liste der Aufsätze, die in diesem Band enthalten sind</target>
             </trans-unit>
-            <trans-unit id="object.volume.asVolumeOfPublicationRelation" resname="object.volume.asVolumeOfPublicationRelation" approved="yes">
-                <source>Usage as volume of a publication relation</source>
-                <target>Verwendung als Band einer Publikationsrelation</target>
-            </trans-unit>
-            <trans-unit id="object.volume.asVolumeOfPublicationRelation.description" resname="object.volume.asVolumeOfPublicationRelation.description" approved="yes">
-                <source>List of publication relations that use this volume</source>
-                <target>Liste der Publikationsrelationen, die diesen Band verwenden</target>
-            </trans-unit>
             <!-- Object: Essay -->
             <trans-unit id="object.essay" resname="object.essay" approved="yes">
                 <source>Essay</source>
@@ -118,31 +94,6 @@
             <trans-unit id="object.essay.essay.description" resname="object.essay.essay.description" approved="yes">
                 <source>List of essays that are part of this essay</source>
                 <target>Liste der Aufsätze, die in diesem Aufsatz enthalten sind</target>
-            </trans-unit>
-            <trans-unit id="object.essay.asEssayOfPublicationRelation" resname="object.essay.asEssayOfPublicationRelation" approved="yes">
-                <source>Usage as essay of a publication relation</source>
-                <target>Verwendung als Aufsatz einer Publikationsrelation</target>
-            </trans-unit>
-            <trans-unit id="object.essay.asEssayOfPublicationRelation.description" resname="object.essay.asEssayOfPublicationRelation.description" approved="yes">
-                <source>List of publication relations that use this essay</source>
-                <target>Liste der Publikationsrelationen, die diesen Aufsatz verwenden</target>
-            </trans-unit>
-            <!-- Object: LabelTag -->
-            <trans-unit id="object.labelTag.asLabelOfVolume" resname="object.labelTag.asLabelOfVolume" approved="yes">
-                <source>Usage as label of a volume</source>
-                <target>Verwendung als Label eines Bandes</target>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfVolume.description" resname="object.labelTag.asLabelOfVolume.description" approved="yes">
-                <source>List of volumes that use this label</source>
-                <target>Liste der Bände, die dieses Label verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfEssay" resname="object.labelTag.asLabelOfEssay" approved="yes">
-                <source>Usage as label of a essay</source>
-                <target>Verwendung als Label eines Aufsatzes</target>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfEssay.description" resname="object.labelTag.asLabelOfEssay.description" approved="yes">
-                <source>List of essays that use this label</source>
-                <target>Liste der Aufsätze, die dieses Label verwenden</target>
             </trans-unit>
             <!-- Object: AbstractHeritage -->
             <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation" approved="yes">

@@ -26,61 +26,15 @@ defined('TYPO3') or die();
     ]
 );
 
-// Add columns 'all_essays' and 'all_volumes'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_resource',
-    [
-        'all_essays' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allEssays',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allEssays.description',
-            'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_chfpub_domain_model_essay',
-                'foreign_field' => 'parent_resource',
-                'foreign_sortby' => 'sorting',
-                'appearance' => [
-                    'collapseAll' => true,
-                    'expandSingle' => true,
-                    'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'bottom',
-                    'useSortable' => false,
-                    'showPossibleLocalizationRecords' => true,
-                    'showAllLocalizationLink' => true,
-                    'showSynchronizationLink' => true,
-                ],
-            ],
-        ],
-        'all_volumes' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allVolumes',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.publicationResource.allVolumes.description',
-            'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'foreign_field' => 'parent_resource',
-                'foreign_sortby' => 'sorting',
-                'appearance' => [
-                    'collapseAll' => true,
-                    'expandSingle' => true,
-                    'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'bottom',
-                    'useSortable' => false,
-                    'showPossibleLocalizationRecords' => true,
-                    'showAllLocalizationLink' => true,
-                    'showSynchronizationLink' => true,
-                ],
-            ],
-        ],
-    ]
-);
-
 // Add type 'publicationResource' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_resource']['types'] += ['publicationResource' => [
-   'showitem' => 'type,--palette--;;titleLangCode,description,glossary,
-   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,all_essays,all_volumes,all_agents,all_locations,all_periods,all_tags,all_keywords,all_relations,all_file_groups,
-   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,same_as,
-   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumber,editorial_note,authorship_relation,licence_relation,
-   --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,import_origin,import_state,',
+    'showitem' => 'type,--palette--;;titleLangCode,description,glossary,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,items,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.management,--palette--;;iriUuid,same_as,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumber,editorial_note,authorship_relation,licence_relation,
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,import_origin,import_state,',
 ]];
+
+// Add opposite usage info to 'items' column
+$GLOBALS['TCA']['tx_chfbase_domain_model_resource']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_essay'] = ['parent_resource'];
+$GLOBALS['TCA']['tx_chfbase_domain_model_resource']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_volume'] = ['parent_resource'];

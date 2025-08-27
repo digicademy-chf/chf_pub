@@ -9,50 +9,17 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFPub\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Model\AbstractResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFGloss\Domain\Model\Traits\GlossaryTrait;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die();
 
 /**
- * Model for PublicationResource
+ * Model for AbstractPublicationResource
  */
-class PublicationResource extends AbstractResource
+class AbstractPublicationResource extends AbstractResource
 {
-    /**
-     * Glossary of this resource
-     * 
-     * @var GlossaryResource|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected GlossaryResource|LazyLoadingProxy|null $glossary = null;
-
-    /**
-     * List of all essays compiled in this resource
-     * 
-     * @var ?ObjectStorage<Essay>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $allEssays = null;
-
-    /**
-     * List of all volumes compiled in this resource
-     * 
-     * @var ?ObjectStorage<Volume>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $allVolumes = null;
-
     /**
      * Construct object
      *
@@ -62,138 +29,28 @@ class PublicationResource extends AbstractResource
     public function __construct(string $langCode)
     {
         parent::__construct($langCode);
-        $this->initializeObject();
 
         $this->setType('publicationResource');
     }
+}
+
+# If CHF Gloss is available
+if (ExtensionManagementUtility::isLoaded('chf_gloss')) {
 
     /**
-     * Initialize object
+     * Model for PublicationResource (with glossary property)
      */
-    public function initializeObject(): void
+    class PublicationResource extends AbstractPublicationResource
     {
-        $this->allEssays ??= new ObjectStorage();
-        $this->allVolumes ??= new ObjectStorage();
+        use GlossaryTrait;
     }
 
-    /**
-     * Get glossary
-     * 
-     * @return GlossaryResource
-     */
-    public function getGlossary(): GlossaryResource
-    {
-        if ($this->glossary instanceof LazyLoadingProxy) {
-            $this->glossary->_loadRealInstance();
-        }
-        return $this->glossary;
-    }
+# If no relevant extensions are available
+} else {
 
     /**
-     * Set glossary
-     * 
-     * @param GlossaryResource
+     * Model for PublicationResource
      */
-    public function setGlossary(GlossaryResource $glossary): void
-    {
-        $this->glossary = $glossary;
-    }
-
-    /**
-     * Get all essays
-     *
-     * @return ObjectStorage<Essay>
-     */
-    public function getAllEssays(): ?ObjectStorage
-    {
-        return $this->allEssays;
-    }
-
-    /**
-     * Set all essays
-     *
-     * @param ObjectStorage<Essay> $allEssays
-     */
-    public function setAllEssays(ObjectStorage $allEssays): void
-    {
-        $this->allEssays = $allEssays;
-    }
-
-    /**
-     * Add all essays
-     *
-     * @param Essay $allEssays
-     */
-    public function addAllEssays(Essay $allEssays): void
-    {
-        $this->allEssays?->attach($allEssays);
-    }
-
-    /**
-     * Remove all essays
-     *
-     * @param Essay $allEssays
-     */
-    public function removeAllEssays(Essay $allEssays): void
-    {
-        $this->allEssays?->detach($allEssays);
-    }
-
-    /**
-     * Remove all all essays
-     */
-    public function removeAllAllEssays(): void
-    {
-        $allEssays = clone $this->allEssays;
-        $this->allEssays->removeAll($allEssays);
-    }
-
-    /**
-     * Get all volumes
-     *
-     * @return ObjectStorage<Volume>
-     */
-    public function getAllVolumes(): ?ObjectStorage
-    {
-        return $this->allVolumes;
-    }
-
-    /**
-     * Set all volumes
-     *
-     * @param ObjectStorage<Volume> $allVolumes
-     */
-    public function setAllVolumes(ObjectStorage $allVolumes): void
-    {
-        $this->allVolumes = $allVolumes;
-    }
-
-    /**
-     * Add all volumes
-     *
-     * @param Volume $allVolumes
-     */
-    public function addAllVolumes(Volume $allVolumes): void
-    {
-        $this->allVolumes?->attach($allVolumes);
-    }
-
-    /**
-     * Remove all volumes
-     *
-     * @param Volume $allVolumes
-     */
-    public function removeAllVolumes(Volume $allVolumes): void
-    {
-        $this->allVolumes?->detach($allVolumes);
-    }
-
-    /**
-     * Remove all all volumes
-     */
-    public function removeAllAllVolumes(): void
-    {
-        $allVolumes = clone $this->allVolumes;
-        $this->allVolumes->removeAll($allVolumes);
-    }
+    class PublicationResource extends AbstractPublicationResource
+    {}
 }

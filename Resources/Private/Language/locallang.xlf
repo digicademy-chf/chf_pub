@@ -7,18 +7,6 @@
             <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource">
                 <source>Text publication</source>
             </trans-unit>
-            <trans-unit id="object.publicationResource.allVolumes" resname="object.publicationResource.allVolumes">
-                <source>All volumes</source>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allVolumes.description" resname="object.publicationResource.allVolumes.description">
-                <source>List of all volumes compiled in this resource</source>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allEssays" resname="object.publicationResource.allEssays">
-                <source>All essays</source>
-            </trans-unit>
-            <trans-unit id="object.publicationResource.allEssays.description" resname="object.publicationResource.allEssays.description">
-                <source>List of all essays compiled in this resource</source>
-            </trans-unit>
             <!-- Object: PublicationRelation -->
             <trans-unit id="object.publicationRelation.type.publicationRelation" resname="object.publicationRelation.type.publicationRelation">
                 <source>Publication relation</source>
@@ -57,12 +45,6 @@
             <trans-unit id="object.volume.essay.description" resname="object.volume.essay.description">
                 <source>List of essays that are part of this volume</source>
             </trans-unit>
-            <trans-unit id="object.volume.asVolumeOfPublicationRelation" resname="object.volume.asVolumeOfPublicationRelation">
-                <source>Usage as volume of a publication relation</source>
-            </trans-unit>
-            <trans-unit id="object.volume.asVolumeOfPublicationRelation.description" resname="object.volume.asVolumeOfPublicationRelation.description">
-                <source>List of publication relations that use this volume</source>
-            </trans-unit>
             <!-- Object: Essay -->
             <trans-unit id="object.essay" resname="object.essay">
                 <source>Essay</source>
@@ -90,25 +72,6 @@
             </trans-unit>
             <trans-unit id="object.essay.essay.description" resname="object.essay.essay.description">
                 <source>List of essays that are part of this essay</source>
-            </trans-unit>
-            <trans-unit id="object.essay.asEssayOfPublicationRelation" resname="object.essay.asEssayOfPublicationRelation">
-                <source>Usage as essay of a publication relation</source>
-            </trans-unit>
-            <trans-unit id="object.essay.asEssayOfPublicationRelation.description" resname="object.essay.asEssayOfPublicationRelation.description">
-                <source>List of publication relations that use this essay</source>
-            </trans-unit>
-            <!-- Object: LabelTag -->
-            <trans-unit id="object.labelTag.asLabelOfVolume" resname="object.labelTag.asLabelOfVolume">
-                <source>Usage as label of a volume</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfVolume.description" resname="object.labelTag.asLabelOfVolume.description">
-                <source>List of volumes that use this label</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfEssay" resname="object.labelTag.asLabelOfEssay">
-                <source>Usage as label of a essay</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfEssay.description" resname="object.labelTag.asLabelOfEssay.description">
-                <source>List of essays that use this label</source>
             </trans-unit>
             <!-- Object: AbstractHeritage -->
             <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation">

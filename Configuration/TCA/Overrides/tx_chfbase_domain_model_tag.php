@@ -18,40 +18,6 @@ defined('TYPO3') or die();
  * https://docs.typo3.org/m/typo3/reference-tca/main/en-us/.
  */
 
-// Add columns 'as_label_of_essay' and 'as_label_of_volume'
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_chfbase_domain_model_tag',
-    [
-        'as_label_of_essay' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfEssay',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfEssay.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_chfpub_domain_model_essay',
-                'MM' => 'tx_chfpub_domain_model_essay_tag_label_mm',
-                'MM_opposite_field' => 'label',
-                'multiple' => 1,
-                'size' => 5,
-                'autoSizeMax' => 10,
-            ],
-        ],
-        'as_label_of_volume' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume',
-            'description' => 'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfVolume.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'MM' => 'tx_chfpub_domain_model_volume_tag_label_mm',
-                'MM_opposite_field' => 'label',
-                'multiple' => 1,
-                'size' => 5,
-                'autoSizeMax' => 10,
-            ],
-        ],
-    ]
-);
+// Add opposite usage info to 'items' column
+$GLOBALS['TCA']['tx_chfbase_domain_model_tag']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_essay'] = ['label'];
+$GLOBALS['TCA']['tx_chfbase_domain_model_tag']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_volume'] = ['label'];

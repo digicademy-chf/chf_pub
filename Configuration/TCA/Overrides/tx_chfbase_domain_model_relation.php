@@ -45,8 +45,7 @@ defined('TYPO3') or die();
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfpub_domain_model_essay',
-                'MM' => 'tx_chfbase_domain_model_relation_essay_essay_mm',
-                'multiple' => 1,
+                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_essay}.{#sys_language_uid} IN (-1, 0)',
                 'items' => [
                     [
                         'label' => '',
@@ -67,8 +66,7 @@ defined('TYPO3') or die();
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfpub_domain_model_volume',
-                'MM' => 'tx_chfbase_domain_model_relation_volume_volume_mm',
-                'multiple' => 1,
+                'foreign_table_where' => 'AND {#tx_chfpub_domain_model_volume}.{#sys_language_uid} IN (-1, 0)',
                 'items' => [
                     [
                         'label' => '',
@@ -106,5 +104,5 @@ defined('TYPO3') or die();
 // Add type 'publicationRelation' and its 'showitem' list
 $GLOBALS['TCA']['tx_chfbase_domain_model_relation']['types'] += ['publicationRelation' => [
     'showitem' => 'type,record,--palette--;;essayVolumePosition,description,
-    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuid,',
+    --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.management,parent_resource,--palette--;;iriUuid,',
 ]];

@@ -9,12 +9,11 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFPub\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\AbstractHeritage;
+use Digicademy\CHFBase\Domain\Model\Traits\ExtentTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Model\AbstractHeritage;
-use Digicademy\CHFBase\Domain\Model\Extent;
 
 defined('TYPO3') or die();
 
@@ -23,6 +22,8 @@ defined('TYPO3') or die();
  */
 class Volume extends AbstractHeritage
 {
+use ExtentTrait;
+
     /**
      * Name of this volume
      * 
@@ -37,17 +38,6 @@ class Volume extends AbstractHeritage
     protected string $title = '';
 
     /**
-     * List of extents relevant to this entry
-     * 
-     * @var ?ObjectStorage<Extent>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $extent = null;
-
-    /**
      * List of essays that are part of this volume
      * 
      * @var ?ObjectStorage<Essay>
@@ -56,26 +46,18 @@ class Volume extends AbstractHeritage
     protected ?ObjectStorage $essay = null;
 
     /**
-     * List of publication relations that use this volume
-     * 
-     * @var ?ObjectStorage<PublicationRelation>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asVolumeOfPublicationRelation = null;
-
-    /**
      * Construct object
      *
      * @param string $title
-     * @param PublicationResource $parentResource
      * @return Volume
      */
-    public function __construct(string $title, PublicationResource $parentResource)
+    public function __construct(string $title)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setTitle($title);
+        $this->setIri('vo');
     }
 
     /**
@@ -85,7 +67,6 @@ class Volume extends AbstractHeritage
     {
         $this->extent ??= new ObjectStorage();
         $this->essay ??= new ObjectStorage();
-        $this->asVolumeOfPublicationRelation ??= new ObjectStorage();
     }
 
     /**
@@ -106,55 +87,6 @@ class Volume extends AbstractHeritage
     public function setTitle(string $title): void
     {
         $this->title = $title;
-    }
-
-    /**
-     * Get extent
-     *
-     * @return ObjectStorage<Extent>
-     */
-    public function getExtent(): ?ObjectStorage
-    {
-        return $this->extent;
-    }
-
-    /**
-     * Set extent
-     *
-     * @param ObjectStorage<Extent> $extent
-     */
-    public function setExtent(ObjectStorage $extent): void
-    {
-        $this->extent = $extent;
-    }
-
-    /**
-     * Add extent
-     *
-     * @param Extent $extent
-     */
-    public function addExtent(Extent $extent): void
-    {
-        $this->extent?->attach($extent);
-    }
-
-    /**
-     * Remove extent
-     *
-     * @param Extent $extent
-     */
-    public function removeExtent(Extent $extent): void
-    {
-        $this->extent?->detach($extent);
-    }
-
-    /**
-     * Remove all extents
-     */
-    public function removeAllExtent(): void
-    {
-        $extent = clone $this->extent;
-        $this->extent->removeAll($extent);
     }
 
     /**
@@ -204,54 +136,5 @@ class Volume extends AbstractHeritage
     {
         $essay = clone $this->essay;
         $this->essay->removeAll($essay);
-    }
-
-    /**
-     * Get as volume of publication relation
-     *
-     * @return ObjectStorage<PublicationRelation>
-     */
-    public function getAsVolumeOfPublicationRelation(): ?ObjectStorage
-    {
-        return $this->asVolumeOfPublicationRelation;
-    }
-
-    /**
-     * Set as volume of publication relation
-     *
-     * @param ObjectStorage<PublicationRelation> $asVolumeOfPublicationRelation
-     */
-    public function setAsVolumeOfPublicationRelation(ObjectStorage $asVolumeOfPublicationRelation): void
-    {
-        $this->asVolumeOfPublicationRelation = $asVolumeOfPublicationRelation;
-    }
-
-    /**
-     * Add as volume of publication relation
-     *
-     * @param PublicationRelation $asVolumeOfPublicationRelation
-     */
-    public function addAsVolumeOfPublicationRelation(PublicationRelation $asVolumeOfPublicationRelation): void
-    {
-        $this->asVolumeOfPublicationRelation?->attach($asVolumeOfPublicationRelation);
-    }
-
-    /**
-     * Remove as volume of publication relation
-     *
-     * @param PublicationRelation $asVolumeOfPublicationRelation
-     */
-    public function removeAsVolumeOfPublicationRelation(PublicationRelation $asVolumeOfPublicationRelation): void
-    {
-        $this->asVolumeOfPublicationRelation?->detach($asVolumeOfPublicationRelation);
-    }
-
-    /**
-     * Remove all as volume of publication relations
-     */
-    public function removeAllAsVolumeOfPublicationRelation(): void
-    {
-        $asVolumeOfPublicationRelation = clone $this->asVolumeOfPublicationRelation;
-        $this->asVolumeOfPublicationRelation->removeAll($asVolumeOfPublicationRelation);
     }
 }

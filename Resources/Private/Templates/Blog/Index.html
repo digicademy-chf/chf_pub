@@ -2,8 +2,8 @@
 <f:layout name="Default" />
 <f:section name="Main">
 <ul>
-    <f:for each="{resource.allEssays}" as="essay">
-        <li><f:link.action action="show" arguments="{essay: essay}">{essay.title}</f:link.action></li>
+    <f:for each="{resource.items}" as="item">
+        <li><f:link.action action="show" arguments="{item: item}">{item.title}</f:link.action></li>
     </f:for>
 </ul>
 <f:debug>{_all}</f:debug>

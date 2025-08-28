@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Digicademy\CHFPub\Controller;
 
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Digicademy\CHFPub\Domain\Model\Essay;
 use Digicademy\CHFPub\Domain\Model\Volume;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Cache\CacheTag;
@@ -51,12 +52,33 @@ class BooksController extends ActionController
     }
 
     /**
+     * Show single essay
+     *
+     * @param Essay $essay
+     * @return ResponseInterface
+     */
+    public function showAction(Essay $essay): ResponseInterface
+    {
+        // Get essay
+        $this->view->assign('essay', $essay);
+
+        // Set cache tag
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
+        return $this->htmlResponse();
+    }
+
+    /**
      * Show single volume
      *
      * @param Volume $volume
      * @return ResponseInterface
      */
-    public function showAction(Volume $volume): ResponseInterface
+    public function showVolumeAction(Volume $volume): ResponseInterface
     {
         // Get essay
         $this->view->assign('volume', $volume);

@@ -29,7 +29,7 @@ ExtensionUtility::configurePlugin(
     'CHFPub',
     'Books',
     [
-        BooksController::class => 'index, show',
+        BooksController::class => 'index, show, showVolume',
     ],
     [], // None of the actions are non-cacheable
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT

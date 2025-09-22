@@ -36,5 +36,6 @@ $GLOBALS['TCA']['tx_chfbase_domain_model_resource']['types'] += ['publicationRes
 ]];
 
 // Add opposite usage info to 'items' column
+$GLOBALS['TCA']['tx_chfbase_domain_model_resource']['columns']['items']['config']['allowed'] .= ',tx_chfpub_domain_model_essay,tx_chfpub_domain_model_volume';
 $GLOBALS['TCA']['tx_chfbase_domain_model_resource']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_essay'] = ['parent_resource'];
 $GLOBALS['TCA']['tx_chfbase_domain_model_resource']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_volume'] = ['parent_resource'];

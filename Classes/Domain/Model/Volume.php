@@ -40,10 +40,10 @@ use ExtentTrait;
     /**
      * List of essays that are part of this volume
      * 
-     * @var ?ObjectStorage<Essay>
+     * @var ObjectStorage<Essay>
      */
     #[Lazy()]
-    protected ?ObjectStorage $essay = null;
+    protected ObjectStorage $essay;
 
     /**
      * Construct object
@@ -65,8 +65,8 @@ use ExtentTrait;
      */
     public function initializeObject(): void
     {
-        $this->extent ??= new ObjectStorage();
-        $this->essay ??= new ObjectStorage();
+        $this->extent = new ObjectStorage();
+        $this->essay = new ObjectStorage();
     }
 
     /**
@@ -94,7 +94,7 @@ use ExtentTrait;
      *
      * @return ObjectStorage<Essay>
      */
-    public function getEssay(): ?ObjectStorage
+    public function getEssay(): ObjectStorage
     {
         return $this->essay;
     }
@@ -116,7 +116,7 @@ use ExtentTrait;
      */
     public function addEssay(Essay $essay): void
     {
-        $this->essay?->attach($essay);
+        $this->essay->attach($essay);
     }
 
     /**
@@ -126,7 +126,7 @@ use ExtentTrait;
      */
     public function removeEssay(Essay $essay): void
     {
-        $this->essay?->detach($essay);
+        $this->essay->detach($essay);
     }
 
     /**

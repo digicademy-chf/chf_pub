@@ -19,5 +19,6 @@ defined('TYPO3') or die();
  */
 
 // Add opposite usage info to 'items' column
+$GLOBALS['TCA']['tx_chfbase_domain_model_tag']['columns']['items']['config']['allowed'] .= ',tx_chfpub_domain_model_essay,tx_chfpub_domain_model_volume';
 $GLOBALS['TCA']['tx_chfbase_domain_model_tag']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_essay'] = ['label'];
 $GLOBALS['TCA']['tx_chfbase_domain_model_tag']['columns']['items']['config']['MM_oppositeUsage']['tx_chfpub_domain_model_volume'] = ['label'];

@@ -41,10 +41,10 @@ class Essay extends AbstractHeritage
     /**
      * List of essays that are part of this essay
      * 
-     * @var ?ObjectStorage<Essay>
+     * @var ObjectStorage<Essay>
      */
     #[Lazy()]
-    protected ?ObjectStorage $essay = null;
+    protected ObjectStorage $essay;
 
     /**
      * Essay that this essay is part of
@@ -82,8 +82,8 @@ class Essay extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->extent ??= new ObjectStorage();
-        $this->essay ??= new ObjectStorage();
+        $this->extent = new ObjectStorage();
+        $this->essay = new ObjectStorage();
     }
 
     /**
@@ -111,7 +111,7 @@ class Essay extends AbstractHeritage
      *
      * @return ObjectStorage<Essay>
      */
-    public function getEssay(): ?ObjectStorage
+    public function getEssay(): ObjectStorage
     {
         return $this->essay;
     }
@@ -133,7 +133,7 @@ class Essay extends AbstractHeritage
      */
     public function addEssay(Essay $essay): void
     {
-        $this->essay?->attach($essay);
+        $this->essay->attach($essay);
     }
 
     /**
@@ -143,7 +143,7 @@ class Essay extends AbstractHeritage
      */
     public function removeEssay(Essay $essay): void
     {
-        $this->essay?->detach($essay);
+        $this->essay->detach($essay);
     }
 
     /**

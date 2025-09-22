@@ -24,20 +24,20 @@ trait PublicationRelationTrait
     /**
      * Relevant text publications in the database
      * 
-     * @var ?ObjectStorage<PublicationRelation>
+     * @var ObjectStorage<PublicationRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $publicationRelation = null;
+    protected ObjectStorage $publicationRelation;
 
     /**
      * Get publication relation
      *
      * @return ObjectStorage<PublicationRelation>
      */
-    public function getPublicationRelation(): ?ObjectStorage
+    public function getPublicationRelation(): ObjectStorage
     {
         return $this->publicationRelation;
     }
@@ -59,7 +59,7 @@ trait PublicationRelationTrait
      */
     public function addPublicationRelation(PublicationRelation $publicationRelation): void
     {
-        $this->publicationRelation?->attach($publicationRelation);
+        $this->publicationRelation->attach($publicationRelation);
     }
 
     /**
@@ -69,7 +69,7 @@ trait PublicationRelationTrait
      */
     public function removePublicationRelation(PublicationRelation $publicationRelation): void
     {
-        $this->publicationRelation?->detach($publicationRelation);
+        $this->publicationRelation->detach($publicationRelation);
     }
 
     /**

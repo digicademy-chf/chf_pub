@@ -95,6 +95,9 @@ defined('TYPO3') or die();
     ]
 );
 
+// Add tables to allow list of 'record' column
+$GLOBALS['TCA']['tx_chfbase_domain_model_relation']['columns']['record']['config']['allowed'] .= ',tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay';
+
 // Create palette 'essayVolumePosition'
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tx_chfbase_domain_model_relation',
     'essayVolumePosition',

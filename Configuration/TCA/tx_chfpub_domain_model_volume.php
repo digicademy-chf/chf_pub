@@ -220,6 +220,7 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
+                                'default' => 'linkRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -447,6 +448,7 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
+                                'default' => 'authorshipRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -485,6 +487,7 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
+                                'default' => 'licenceRelation',
                                 'readOnly' => true,
                             ],
                         ],

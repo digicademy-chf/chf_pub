@@ -21,6 +21,7 @@ ExtensionUtility::configurePlugin(
         BlogController::class => 'index, show',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Books' content element
@@ -31,4 +32,5 @@ ExtensionUtility::configurePlugin(
         BooksController::class => 'index, show, showVolume',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );

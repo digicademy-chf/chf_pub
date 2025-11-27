@@ -22,8 +22,8 @@ use Digicademy\CHFMap\Domain\Model\Feature;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
 defined('TYPO3') or die();

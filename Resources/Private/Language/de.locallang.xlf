@@ -1,127 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:chf_pub/Resources/Private/Language/locallang.xlf" date="2023-09-25T10:48:43Z" product-name="chf_pub">
-        <header/>
-        <body>
-            <!-- Object: PublicationResource -->
-            <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource" approved="yes">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="de">
+    <file id="chf_pub">
+        <!-- Object: PublicationResource -->
+        <unit id="object.publicationResource.type.publicationResource">
+            <segment state="final">
                 <source>Text publication</source>
                 <target>Textpublikation</target>
-            </trans-unit>
-            <!-- Object: PublicationRelation -->
-            <trans-unit id="object.publicationRelation.type.publicationRelation" resname="object.publicationRelation.type.publicationRelation" approved="yes">
+            </segment>
+        </unit>
+        <!-- Object: PublicationRelation -->
+        <unit id="object.publicationRelation.type.publicationRelation">
+            <segment state="final">
                 <source>Publication relation</source>
                 <target>Publikationsrelation</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.volume" resname="object.publicationRelation.volume" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.volume">
+            <segment state="final">
                 <source>Volume</source>
                 <target>Band</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.volume.description" resname="object.publicationRelation.volume.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.volume.description">
+            <segment state="final">
                 <source>Volume to relate to the record</source>
                 <target>Band, der mit dem Eintrag verknüpft werden soll</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.essay" resname="object.publicationRelation.essay" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.essay">
+            <segment state="final">
                 <source>Essay</source>
                 <target>Aufsatz</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.essay.description" resname="object.publicationRelation.essay.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.essay.description">
+            <segment state="final">
                 <source>Essay to relate to the record</source>
                 <target>Aufsatz, der mit dem Eintrag verknüpft werden soll</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.position" resname="object.publicationRelation.position" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.position">
+            <segment state="final">
                 <source>Position</source>
                 <target>Stelle</target>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.position.description" resname="object.publicationRelation.position.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.position.description">
+            <segment state="final">
                 <source>Page number or other location</source>
                 <target>Seitenangabe oder andere Stelle</target>
-            </trans-unit>
-            <!-- Object: Volume -->
-            <trans-unit id="object.volume" resname="object.volume" approved="yes">
+            </segment>
+        </unit>
+        <!-- Object: Volume -->
+        <unit id="object.volume">
+            <segment state="final">
                 <source>Volume</source>
                 <target>Band</target>
-            </trans-unit>
-            <trans-unit id="object.volume.title" resname="object.volume.title" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.volume.title">
+            <segment state="final">
                 <source>Title</source>
                 <target>Titel</target>
-            </trans-unit>
-            <trans-unit id="object.volume.title.description" resname="object.volume.title.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.volume.title.description">
+            <segment state="final">
                 <source>Name of this volume</source>
                 <target>Name dieses Bandes</target>
-            </trans-unit>
-            <trans-unit id="object.volume.essay" resname="object.volume.essay" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.volume.essay">
+            <segment state="final">
                 <source>Essay</source>
                 <target>Aufsatz</target>
-            </trans-unit>
-            <trans-unit id="object.volume.essay.description" resname="object.volume.essay.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.volume.essay.description">
+            <segment state="final">
                 <source>List of essays that are part of this volume</source>
                 <target>Liste der Aufsätze, die in diesem Band enthalten sind</target>
-            </trans-unit>
-            <!-- Object: Essay -->
-            <trans-unit id="object.essay" resname="object.essay" approved="yes">
+            </segment>
+        </unit>
+        <!-- Object: Essay -->
+        <unit id="object.essay">
+            <segment state="final">
                 <source>Essay</source>
                 <target>Aufsatz</target>
-            </trans-unit>
-            <trans-unit id="object.essay.parentVolume" resname="object.essay.parentVolume" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentVolume">
+            <segment state="final">
                 <source>Parent volume</source>
                 <target>Übergeordneter Band</target>
-            </trans-unit>
-            <trans-unit id="object.essay.parentVolume.description" resname="object.essay.parentVolume.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentVolume.description">
+            <segment state="final">
                 <source>Volume that this essay is part of</source>
                 <target>Band, zu dem dieser Aufsatz gehört</target>
-            </trans-unit>
-            <trans-unit id="object.essay.parentEssay" resname="object.essay.parentEssay" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentEssay">
+            <segment state="final">
                 <source>Parent essay</source>
                 <target>Übergeordneter Aufsatz</target>
-            </trans-unit>
-            <trans-unit id="object.essay.parentEssay.description" resname="object.essay.parentEssay.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentEssay.description">
+            <segment state="final">
                 <source>Essay that this essay is part of</source>
                 <target>Aufsatz, zu dem dieser Aufsatz gehört</target>
-            </trans-unit>
-            <trans-unit id="object.essay.title" resname="object.essay.title" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.title">
+            <segment state="final">
                 <source>Title</source>
                 <target>Titel</target>
-            </trans-unit>
-            <trans-unit id="object.essay.title.description" resname="object.essay.title.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.title.description">
+            <segment state="final">
                 <source>Name of this essay</source>
                 <target>Name dieses Aufsatzes</target>
-            </trans-unit>
-            <trans-unit id="object.essay.essay" resname="object.essay.essay" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.essay">
+            <segment state="final">
                 <source>Essay</source>
                 <target>Aufsatz</target>
-            </trans-unit>
-            <trans-unit id="object.essay.essay.description" resname="object.essay.essay.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.essay.essay.description">
+            <segment state="final">
                 <source>List of essays that are part of this essay</source>
                 <target>Liste der Aufsätze, die in diesem Aufsatz enthalten sind</target>
-            </trans-unit>
-            <!-- Object: AbstractHeritage -->
-            <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation" approved="yes">
+            </segment>
+        </unit>
+        <!-- Object: AbstractHeritage -->
+        <unit id="object.abstractHeritage.publicationRelation">
+            <segment state="final">
                 <source>Text publication</source>
                 <target>Textpublikation</target>
-            </trans-unit>
-            <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="object.abstractHeritage.publicationRelation.description">
+            <segment state="final">
                 <source>Relevant text publications in the database</source>
                 <target>Angabe relevanter Textpublikationen in der Datenbank</target>
-            </trans-unit>
-            <!-- Plugin: Blog -->
-            <trans-unit id="plugin.blog" resname="plugin.blog" approved="yes">
+            </segment>
+        </unit>
+        <!-- Plugin: Blog -->
+        <unit id="plugin.blog">
+            <segment state="final">
                 <source>Blog/Journal</source>
                 <target>Blog/Zeitschrift</target>
-            </trans-unit>
-            <trans-unit id="plugin.blog.description" resname="plugin.blog.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="plugin.blog.description">
+            <segment state="final">
                 <source>List and show essays (continuous)</source>
                 <target>Aufsätze auflisten und anzeigen (fortlaufend)</target>
-            </trans-unit>
-            <!-- Plugin: Books -->
-            <trans-unit id="plugin.books" resname="plugin.books" approved="yes">
+            </segment>
+        </unit>
+        <!-- Plugin: Books -->
+        <unit id="plugin.books">
+            <segment state="final">
                 <source>Books</source>
                 <target>Bücher</target>
-            </trans-unit>
-            <trans-unit id="plugin.books.description" resname="plugin.books.description" approved="yes">
+            </segment>
+        </unit>
+        <unit id="plugin.books.description">
+            <segment state="final">
                 <source>List and show volumes (traditional)</source>
                 <target>Bände auflisten und anzeigen (traditionell)</target>
-            </trans-unit>
-        </body>
+            </segment>
+        </unit>
     </file>
 </xliff>

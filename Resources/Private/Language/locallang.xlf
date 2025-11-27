@@ -1,99 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:chf_pub/Resources/Private/Language/locallang.xlf" date="2023-09-25T10:48:43Z" product-name="chf_pub">
-        <header/>
-        <body>
-            <!-- Object: PublicationResource -->
-            <trans-unit id="object.publicationResource.type.publicationResource" resname="object.publicationResource.type.publicationResource">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+    <file id="chf_pub">
+        <!-- Object: PublicationResource -->
+        <unit id="object.publicationResource.type.publicationResource">
+            <segment>
                 <source>Text publication</source>
-            </trans-unit>
-            <!-- Object: PublicationRelation -->
-            <trans-unit id="object.publicationRelation.type.publicationRelation" resname="object.publicationRelation.type.publicationRelation">
+            </segment>
+        </unit>
+        <!-- Object: PublicationRelation -->
+        <unit id="object.publicationRelation.type.publicationRelation">
+            <segment>
                 <source>Publication relation</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.volume" resname="object.publicationRelation.volume">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.volume">
+            <segment>
                 <source>Volume</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.volume.description" resname="object.publicationRelation.volume.description">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.volume.description">
+            <segment>
                 <source>Volume to relate to the record</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.essay" resname="object.publicationRelation.essay">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.essay">
+            <segment>
                 <source>Essay</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.essay.description" resname="object.publicationRelation.essay.description">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.essay.description">
+            <segment>
                 <source>Essay to relate to the record</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.position" resname="object.publicationRelation.position">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.position">
+            <segment>
                 <source>Position</source>
-            </trans-unit>
-            <trans-unit id="object.publicationRelation.position.description" resname="object.publicationRelation.position.description">
+            </segment>
+        </unit>
+        <unit id="object.publicationRelation.position.description">
+            <segment>
                 <source>Page number or other location</source>
-            </trans-unit>
-            <!-- Object: Volume -->
-            <trans-unit id="object.volume" resname="object.volume">
+            </segment>
+        </unit>
+        <!-- Object: Volume -->
+        <unit id="object.volume">
+            <segment>
                 <source>Volume</source>
-            </trans-unit>
-            <trans-unit id="object.volume.title" resname="object.volume.title">
+            </segment>
+        </unit>
+        <unit id="object.volume.title">
+            <segment>
                 <source>Title</source>
-            </trans-unit>
-            <trans-unit id="object.volume.title.description" resname="object.volume.title.description">
+            </segment>
+        </unit>
+        <unit id="object.volume.title.description">
+            <segment>
                 <source>Name of this volume</source>
-            </trans-unit>
-            <trans-unit id="object.volume.essay" resname="object.volume.essay">
+            </segment>
+        </unit>
+        <unit id="object.volume.essay">
+            <segment>
                 <source>Essay</source>
-            </trans-unit>
-            <trans-unit id="object.volume.essay.description" resname="object.volume.essay.description">
+            </segment>
+        </unit>
+        <unit id="object.volume.essay.description">
+            <segment>
                 <source>List of essays that are part of this volume</source>
-            </trans-unit>
-            <!-- Object: Essay -->
-            <trans-unit id="object.essay" resname="object.essay">
+            </segment>
+        </unit>
+        <!-- Object: Essay -->
+        <unit id="object.essay">
+            <segment>
                 <source>Essay</source>
-            </trans-unit>
-            <trans-unit id="object.essay.parentVolume" resname="object.essay.parentVolume">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentVolume">
+            <segment>
                 <source>Parent volume</source>
-            </trans-unit>
-            <trans-unit id="object.essay.parentVolume.description" resname="object.essay.parentVolume.description">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentVolume.description">
+            <segment>
                 <source>Volume that this essay is part of</source>
-            </trans-unit>
-            <trans-unit id="object.essay.parentEssay" resname="object.essay.parentEssay">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentEssay">
+            <segment>
                 <source>Parent essay</source>
-            </trans-unit>
-            <trans-unit id="object.essay.parentEssay.description" resname="object.essay.parentEssay.description">
+            </segment>
+        </unit>
+        <unit id="object.essay.parentEssay.description">
+            <segment>
                 <source>Essay that this essay is part of</source>
-            </trans-unit>
-            <trans-unit id="object.essay.title" resname="object.essay.title">
+            </segment>
+        </unit>
+        <unit id="object.essay.title">
+            <segment>
                 <source>Title</source>
-            </trans-unit>
-            <trans-unit id="object.essay.title.description" resname="object.essay.title.description">
+            </segment>
+        </unit>
+        <unit id="object.essay.title.description">
+            <segment>
                 <source>Name of this essay</source>
-            </trans-unit>
-            <trans-unit id="object.essay.essay" resname="object.essay.essay">
+            </segment>
+        </unit>
+        <unit id="object.essay.essay">
+            <segment>
                 <source>Essay</source>
-            </trans-unit>
-            <trans-unit id="object.essay.essay.description" resname="object.essay.essay.description">
+            </segment>
+        </unit>
+        <unit id="object.essay.essay.description">
+            <segment>
                 <source>List of essays that are part of this essay</source>
-            </trans-unit>
-            <!-- Object: AbstractHeritage -->
-            <trans-unit id="object.abstractHeritage.publicationRelation" resname="object.abstractHeritage.publicationRelation">
+            </segment>
+        </unit>
+        <!-- Object: AbstractHeritage -->
+        <unit id="object.abstractHeritage.publicationRelation">
+            <segment>
                 <source>Text publication</source>
-            </trans-unit>
-            <trans-unit id="object.abstractHeritage.publicationRelation.description" resname="object.abstractHeritage.publicationRelation.description">
+            </segment>
+        </unit>
+        <unit id="object.abstractHeritage.publicationRelation.description">
+            <segment>
                 <source>Relevant text publications in the database</source>
-            </trans-unit>
-            <!-- Plugin: Blog -->
-            <trans-unit id="plugin.blog" resname="plugin.blog">
+            </segment>
+        </unit>
+        <!-- Plugin: Blog -->
+        <unit id="plugin.blog">
+            <segment>
                 <source>Blog/Journal</source>
-            </trans-unit>
-            <trans-unit id="plugin.blog.description" resname="plugin.blog.description">
+            </segment>
+        </unit>
+        <unit id="plugin.blog.description">
+            <segment>
                 <source>List and show essays (continuous)</source>
-            </trans-unit>
-            <!-- Plugin: Books -->
-            <trans-unit id="plugin.books" resname="plugin.books">
+            </segment>
+        </unit>
+        <!-- Plugin: Books -->
+        <unit id="plugin.books">
+            <segment>
                 <source>Books</source>
-            </trans-unit>
-            <trans-unit id="plugin.books.description" resname="plugin.books.description">
+            </segment>
+        </unit>
+        <unit id="plugin.books.description">
+            <segment>
                 <source>List and show volumes (traditional)</source>
-            </trans-unit>
-        </body>
+            </segment>
+        </unit>
     </file>
 </xliff>

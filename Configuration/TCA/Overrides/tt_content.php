@@ -29,6 +29,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfpub-plugin-blog',
     'heritage',
     'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.blog.description',
+    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Books'
@@ -39,6 +40,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfpub-plugin-books',
     'heritage',
     'LLL:EXT:chf_pub/Resources/Private/Language/locallang.xlf:plugin.books.description',
+    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add data tab to plugin form
@@ -47,18 +49,4 @@ ExtensionManagementUtility::addToAllTCAtypes(
     '--div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.data,pi_flexform',
     'chfpub_blog,chfpub_books',
     'after:subheader',
-);
-
-// Add form for plugin 'Blog'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
-    'chfpub_blog',
-);
-
-// Add form for plugin 'Books'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_pub/Configuration/FlexForms/PluginData.xml',
-    'chfpub_books',
 );
